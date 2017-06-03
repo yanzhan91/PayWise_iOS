@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class MyCardsService {
     func getMyCards(completionHandler: @escaping (Array<Card>) -> Void) {
-        RestApiManager.sharedInstance.getResponse(urlPath: "/user-cards?user_id=10001") { json in
+        RestApiManager.sharedInstance.getResponse(urlPath: "/user-cards?user_id=10001", method: "GET", parameters: nil) { json in
             
             var cards = [Card]()
             
@@ -26,6 +26,16 @@ class MyCardsService {
             print(cards)
             
             completionHandler(cards)
+        }
+    }
+    
+    func addCard(cardName: String, completionHandler: @escaping (JSON) -> Void) {
+        let parameters = [
+            "user_id": "10001",
+            "card_name": cardName
+        ]
+        RestApiManager.sharedInstance.getResponse(urlPath: "/user-cards", method: "POST", parameters: parameters) { json in
+            completionHandler(json)
         }
     }
 }

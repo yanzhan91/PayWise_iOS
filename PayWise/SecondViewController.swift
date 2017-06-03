@@ -34,13 +34,7 @@ final class SecondViewController: UICollectionViewController {
     @IBAction func addCards(_ sender: UIBarButtonItem) {
         let popover = PopoverController()
         popover.modalPresentationStyle = .popover
-        popover.preferredContentSize = CGSize(width: view.frame.width, height: view.frame.height / 3)
-        self.present(popover, animated: true, completion: nil)
-        
-        let popoverPresentationController = popover.popoverPresentationController
-        popoverPresentationController?.sourceView = sender.customView
-        
-        popoverPresentationController?.permittedArrowDirections = .down
+        self.navigationController!.pushViewController(popover, animated: true)//present(popover, animated: true, completion: nil)
     }
 }
 

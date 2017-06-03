@@ -13,10 +13,12 @@ import Alamofire
 class RestApiManager: NSObject {
     static let sharedInstance = RestApiManager()
     
-    func getResponse(urlPath: String, completionHandler: @escaping (JSON) -> Void) {
+    func getResponse(urlPath: String, method: String, parameters: Dictionary<String, String>?, completionHandler: @escaping (JSON) -> Void) {
         Alamofire.request(
             URL(string: "https://m8n05huk4i.execute-api.us-east-1.amazonaws.com/dev" + urlPath)!,
-            method: .get
+            method: HTTPMethod.init(rawValue: method)!,
+            parameters: parameters,
+            encoding: JSONEncoding.default
             )
             .validate()
             .responseJSON { (response) -> Void in

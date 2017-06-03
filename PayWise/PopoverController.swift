@@ -12,6 +12,7 @@ class PopoverController : UITableViewController {
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     
     fileprivate let resourceGetService = ResourceGetService()
+    fileprivate let myCardsService = MyCardsService()
     
     fileprivate var allCards = [String]()
     fileprivate var filteredCards = [String]()
@@ -64,5 +65,19 @@ extension PopoverController {
             cell.textLabel?.text = allCards[indexPath.row]
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var selectedCard : String
+        if searchController.isActive && searchController.searchBar.text != "" {
+            selectedCard = filteredCards[indexPath.row]
+        } else {
+            selectedCard = allCards[indexPath.row]
+        }
+        
+        myCardsService.addCard(cardName: selectedCard) { json in
+            print(json)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

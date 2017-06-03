@@ -12,7 +12,7 @@ import SwiftyJSON
 class ResourceGetService {
     func getAllCards(completionHandler: @escaping (Array<String>) -> Void) {
         
-        RestApiManager.sharedInstance.getResponse(urlPath: "/cards") {
+        RestApiManager.sharedInstance.getResponse(urlPath: "/cards", method: "GET", parameters: nil) {
             json in
             
             var allCards = [String]()
