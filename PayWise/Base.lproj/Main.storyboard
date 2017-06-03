@@ -146,7 +146,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="My Cards" id="qgH-Wk-VOR">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Kao-GC-KXS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kao-GC-KXS">
                             <connections>
                                 <action selector="addCards:" destination="5tB-4y-h1Y" id="x6t-ok-nDt"/>
                             </connections>
@@ -155,7 +155,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMS-yw-eH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="104"/>
+            <point key="canvasLocation" x="1234" y="79"/>
         </scene>
         <!--Rewards-->
         <scene sceneID="7kf-no-pYC">
@@ -193,7 +193,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1FG-lQ-fbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="104"/>
+            <point key="canvasLocation" x="928" y="70"/>
         </scene>
     </scenes>
     <resources>

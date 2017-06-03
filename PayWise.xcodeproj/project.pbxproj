@@ -18,6 +18,8 @@
 		931ADE251EDBE2200063D45A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE241EDBE2200063D45A /* Card.swift */; };
 		93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93551EE51EDD1282007771E3 /* MyCardCell.swift */; };
 		93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8511EE1A78E009FEB42 /* CustomTap.swift */; };
+		93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8531EE28760009FEB42 /* PopoverController.swift */; };
+		93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */; };
 		E0114CD62FC0159BB34C43E5 /* Pods_PayWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190690C2411AABF1C35E0D8A /* Pods_PayWise.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		931ADE241EDBE2200063D45A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		93551EE51EDD1282007771E3 /* MyCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCardCell.swift; sourceTree = "<group>"; };
 		93A4A8511EE1A78E009FEB42 /* CustomTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTap.swift; sourceTree = "<group>"; };
+		93A4A8531EE28760009FEB42 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
+		93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceGetService.swift; sourceTree = "<group>"; };
 		F840BC32DAEE042A7FF020FB /* Pods-PayWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayWise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayWise/Pods-PayWise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +97,8 @@
 				931ADE241EDBE2200063D45A /* Card.swift */,
 				93551EE51EDD1282007771E3 /* MyCardCell.swift */,
 				93A4A8511EE1A78E009FEB42 /* CustomTap.swift */,
+				93A4A8531EE28760009FEB42 /* PopoverController.swift */,
+				93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */,
 			);
 			path = PayWise;
 			sourceTree = "<group>";
@@ -235,7 +241,9 @@
 				931ADE251EDBE2200063D45A /* Card.swift in Sources */,
 				931ADE0B1EDBCB000063D45A /* AppDelegate.swift in Sources */,
 				931ADE0D1EDBCB000063D45A /* FirstViewController.swift in Sources */,
+				93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */,
 				931ADE211EDBDED70063D45A /* RestApiManager.swift in Sources */,
+				93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */,
 				931ADE1F1EDBDB940063D45A /* MyCardsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
