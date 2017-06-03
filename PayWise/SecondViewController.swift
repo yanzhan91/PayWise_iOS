@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
 
 final class SecondViewController: UICollectionViewController {
     
@@ -19,6 +18,8 @@ final class SecondViewController: UICollectionViewController {
     fileprivate let itemsPerRow: CGFloat = 2
     
     fileprivate var myCards = [Card]()
+    
+    fileprivate var deleteMode = false
     
     override func viewWillAppear(_ animated: Bool) {
         myCardService.getMyCards() { response in
@@ -34,56 +35,65 @@ final class SecondViewController: UICollectionViewController {
     @IBAction func addCards(_ sender: UIBarButtonItem) {
         let popover = PopoverController()
         popover.modalPresentationStyle = .popover
-        self.navigationController!.pushViewController(popover, animated: true)//present(popover, animated: true, completion: nil)
+        self.navigationController!.pushViewController(popover, animated: true)
+    }
+    @IBAction func removeCard(_ sender: Any) {
+        deleteMode = !deleteMode
+        if (deleteMode) {
+            self.navigationItem.rightBarButtonItems?[1].isEnabled = false
+        } else {
+            self.navigationItem.rightBarButtonItems?[1].isEnabled = true
+        }
+        self.collectionView?.reloadData()
     }
 }
 
-// MARK: - UICollectionViewDataSource
 extension SecondViewController {
-    //1
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    //2
     override func collectionView(_ collectionView: UICollectionView,
                                  numberOfItemsInSection section: Int) -> Int {
-        print(self.myCards.count)
         return self.myCards.count
     }
     
-    //3
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCardCell
         let cardInfo = self.myCards[indexPath.row]
+        
+        if (deleteMode) {
+            cell.overlay.isHidden = false
+        } else {
+            cell.overlay.isHidden = true
+        }
         cell.cardImage.image = UIImage.init(named: "amazon-prime-rewards")
-        
-        let tapGestureRecognizer = CustomTap(target: self, action: #selector(linkTapped), url: cardInfo.card_url)
-        cell.cardImage.addGestureRecognizer(tapGestureRecognizer)
-        cell.cardImage.isUserInteractionEnabled = true
-        
         cell.cardName.text = cardInfo.card_name
-        cell.backgroundColor = UIColor(red: CGFloat(arc4random()) / CGFloat(UInt32.max),
-                                       green: CGFloat(arc4random()) / CGFloat(UInt32.max),
-                                       blue:  CGFloat(arc4random()) / CGFloat(UInt32.max),
-                                       alpha: 1.0)
         return cell
     }
     
-    func linkTapped(sender: CustomTap) {
-        if let url = NSURL(string: sender.url!) {
-            UIApplication.shared.open(url as URL)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (deleteMode) {
+            myCardService.deleteCard(cardName: myCards[indexPath.row].card_name) { json in
+                print("deleteing")
+                print(json)
+            }
+            print(indexPath.row)
+            myCards.remove(at: indexPath.row)
+            collectionView.deleteItems(at: [indexPath])
+        } else {
+            if let url = NSURL(string: myCards[indexPath.row].card_url) {
+                UIApplication.shared.open(url as URL)
+            }
         }
     }
 }
 
 extension SecondViewController : UICollectionViewDelegateFlowLayout {
-    //1
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
         let paddingSpace = cellSpacing * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -91,14 +101,12 @@ extension SecondViewController : UICollectionViewDelegateFlowLayout {
         return CGSize(width: widthPerItem, height: widthPerItem * 0.75)
     }
     
-    //3
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: cellSpacing, right: cellSpacing)
     }
     
-    // 4
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

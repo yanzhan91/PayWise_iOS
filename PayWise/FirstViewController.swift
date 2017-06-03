@@ -9,12 +9,11 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-    
-    let myCardService = MyCardsService()
+
+    let user_id = UIDevice.current.identifierForVendor!.uuidString
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

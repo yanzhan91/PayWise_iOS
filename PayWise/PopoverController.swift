@@ -19,7 +19,7 @@ class PopoverController : UITableViewController {
     
     override func viewDidLoad() {
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = true
+        searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         

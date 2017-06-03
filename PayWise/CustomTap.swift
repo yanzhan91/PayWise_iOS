@@ -9,10 +9,12 @@
 import UIKit
 
 class CustomTap : UITapGestureRecognizer {
-    var url: String? = nil
+    var url: String!
+    var indexPath: IndexPath!
     
-    convenience init(target: Any?, action: Selector?, url: String!) {
+    convenience init(target: Any?, action: Selector?, url: String!, indexPath: IndexPath!) {
         self.init(target: target, action: action)
         self.url = url
+        self.indexPath = indexPath
     }
 }

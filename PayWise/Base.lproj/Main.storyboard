@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -86,7 +87,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="-71"/>
+            <point key="canvasLocation" x="-682" y="92"/>
         </scene>
         <!--My Cards-->
         <scene sceneID="E4g-Sl-O5n">
@@ -112,7 +113,6 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffv-M8-wsR">
                                             <rect key="frame" x="5" y="119" width="159" height="34"/>
-                                            <color key="backgroundColor" red="0.93406488102675989" green="0.31463399376683421" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="34" id="1CO-kg-PUR"/>
                                             </constraints>
@@ -123,20 +123,42 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ktL-UP-g8M">
                                             <rect key="frame" x="5" y="5" width="159" height="109"/>
                                         </imageView>
+                                        <view userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZg-wo-dJV">
+                                            <rect key="frame" x="5" y="5" width="159" height="109"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_delete_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qno-Q7-8SV">
+                                                    <rect key="frame" x="54.5" y="29" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="JmB-5X-YrC"/>
+                                                        <constraint firstAttribute="height" constant="50" id="KAR-zH-XiT"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="qno-Q7-8SV" firstAttribute="centerY" secondItem="LZg-wo-dJV" secondAttribute="centerY" id="Smv-lA-X0S"/>
+                                                <constraint firstItem="qno-Q7-8SV" firstAttribute="centerX" secondItem="LZg-wo-dJV" secondAttribute="centerX" id="SzC-wf-aSR"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="LZg-wo-dJV" firstAttribute="height" secondItem="ktL-UP-g8M" secondAttribute="height" id="0Qq-n7-Kdm"/>
+                                    <constraint firstItem="LZg-wo-dJV" firstAttribute="width" secondItem="ktL-UP-g8M" secondAttribute="width" id="3h5-3P-gqH"/>
                                     <constraint firstItem="Ffv-M8-wsR" firstAttribute="trailing" secondItem="ktL-UP-g8M" secondAttribute="trailing" id="62W-eo-gQ2"/>
                                     <constraint firstItem="Ffv-M8-wsR" firstAttribute="top" secondItem="ktL-UP-g8M" secondAttribute="bottom" constant="5" id="6nz-s6-fdE"/>
                                     <constraint firstItem="Ffv-M8-wsR" firstAttribute="leading" secondItem="ktL-UP-g8M" secondAttribute="leading" id="8Th-V5-F5a"/>
+                                    <constraint firstItem="ktL-UP-g8M" firstAttribute="top" secondItem="LZg-wo-dJV" secondAttribute="top" id="Wp1-wH-i9a"/>
                                     <constraint firstAttribute="trailing" secondItem="ktL-UP-g8M" secondAttribute="trailing" constant="5" id="e88-gY-lXA"/>
                                     <constraint firstItem="ktL-UP-g8M" firstAttribute="leading" secondItem="vLZ-j4-T2c" secondAttribute="leading" constant="5" id="kGX-7h-3zT"/>
+                                    <constraint firstItem="LZg-wo-dJV" firstAttribute="leading" secondItem="ktL-UP-g8M" secondAttribute="leading" id="mnW-r1-cFn"/>
                                     <constraint firstItem="ktL-UP-g8M" firstAttribute="top" secondItem="vLZ-j4-T2c" secondAttribute="top" constant="5" id="tmk-tX-wYt"/>
                                     <constraint firstAttribute="bottom" secondItem="Ffv-M8-wsR" secondAttribute="bottom" constant="5" id="wpu-2v-2QD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="cardImage" destination="ktL-UP-g8M" id="Dif-H0-zRB"/>
                                     <outlet property="cardName" destination="Ffv-M8-wsR" id="U35-gz-2fd"/>
+                                    <outlet property="overlay" destination="LZg-wo-dJV" id="mNS-QB-hZb"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -146,16 +168,23 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="My Cards" id="qgH-Wk-VOR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kao-GC-KXS">
-                            <connections>
-                                <action selector="addCards:" destination="5tB-4y-h1Y" id="x6t-ok-nDt"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="trash" id="xmB-Q7-R8w">
+                                <connections>
+                                    <action selector="removeCard:" destination="5tB-4y-h1Y" id="o40-xO-KDC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="Kao-GC-KXS">
+                                <connections>
+                                    <action selector="addCards:" destination="5tB-4y-h1Y" id="x6t-ok-nDt"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMS-yw-eH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="79"/>
+            <point key="canvasLocation" x="1080.8" y="89.505247376311857"/>
         </scene>
         <!--Rewards-->
         <scene sceneID="7kf-no-pYC">
@@ -193,12 +222,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1FG-lQ-fbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="70"/>
+            <point key="canvasLocation" x="402" y="91"/>
         </scene>
     </scenes>
     <resources>
         <image name="cards_tab" width="25" height="25"/>
         <image name="feedbacks_tab" width="25" height="25"/>
+        <image name="red_delete_icon" width="25" height="25"/>
         <image name="rewards_tab" width="25" height="25"/>
     </resources>
 </document>

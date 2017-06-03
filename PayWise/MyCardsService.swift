@@ -10,20 +10,21 @@ import Foundation
 import SwiftyJSON
 
 class MyCardsService {
+    
+    let user_id = UIDevice.current.identifierForVendor!.uuidString
+    
     func getMyCards(completionHandler: @escaping (Array<Card>) -> Void) {
-        RestApiManager.sharedInstance.getResponse(urlPath: "/user-cards?user_id=10001", method: "GET", parameters: nil) { json in
+        RestApiManager.sharedInstance.getResponse(urlPath: "/user-cards?user_id=" + user_id, method: "GET", parameters: nil) { json in
             
             var cards = [Card]()
             
             json.array!.forEach() { jsonCard in
-                print(jsonCard["card_img"].rawString()!)
                 let card = Card(
                     fromImg: jsonCard["card_img"].rawString()!,
                     fromName: jsonCard["card_name"].rawString()!,
                     fromUrl: jsonCard["card_url"].rawString()!)
                 cards.append(card)
             }
-            print(cards)
             
             completionHandler(cards)
         }
@@ -31,10 +32,17 @@ class MyCardsService {
     
     func addCard(cardName: String, completionHandler: @escaping (JSON) -> Void) {
         let parameters = [
-            "user_id": "10001",
+            "user_id": user_id,
             "card_name": cardName
         ]
         RestApiManager.sharedInstance.getResponse(urlPath: "/user-cards", method: "POST", parameters: parameters) { json in
+            completionHandler(json)
+        }
+    }
+    
+    func deleteCard(cardName: String, completionHandler: @escaping (JSON) -> Void) {
+        let urlPath = "/user-cards?user_id="+user_id+"&card_name=" + cardName.replacingOccurrences(of: " ", with: "%20")
+        RestApiManager.sharedInstance.getResponse(urlPath: urlPath, method: "DELETE", parameters: nil) { json in
             completionHandler(json)
         }
     }
