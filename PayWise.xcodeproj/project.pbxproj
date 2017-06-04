@@ -20,6 +20,10 @@
 		93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8511EE1A78E009FEB42 /* CustomTap.swift */; };
 		93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8531EE28760009FEB42 /* PopoverController.swift */; };
 		93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */; };
+		93FD40021EE36889001BAE5B /* GoogleMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40011EE36889001BAE5B /* GoogleMapService.swift */; };
+		93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40031EE3913E001BAE5B /* RewardsCell.swift */; };
+		93FD40061EE39274001BAE5B /* RewardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40051EE39274001BAE5B /* RewardsService.swift */; };
+		93FD40081EE39396001BAE5B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40071EE39396001BAE5B /* Reward.swift */; };
 		E0114CD62FC0159BB34C43E5 /* Pods_PayWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190690C2411AABF1C35E0D8A /* Pods_PayWise.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		93A4A8511EE1A78E009FEB42 /* CustomTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTap.swift; sourceTree = "<group>"; };
 		93A4A8531EE28760009FEB42 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceGetService.swift; sourceTree = "<group>"; };
+		93FD40011EE36889001BAE5B /* GoogleMapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapService.swift; sourceTree = "<group>"; };
+		93FD40031EE3913E001BAE5B /* RewardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsCell.swift; sourceTree = "<group>"; };
+		93FD40051EE39274001BAE5B /* RewardsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsService.swift; sourceTree = "<group>"; };
+		93FD40071EE39396001BAE5B /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		F840BC32DAEE042A7FF020FB /* Pods-PayWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayWise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayWise/Pods-PayWise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +107,10 @@
 				93A4A8511EE1A78E009FEB42 /* CustomTap.swift */,
 				93A4A8531EE28760009FEB42 /* PopoverController.swift */,
 				93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */,
+				93FD40011EE36889001BAE5B /* GoogleMapService.swift */,
+				93FD40031EE3913E001BAE5B /* RewardsCell.swift */,
+				93FD40051EE39274001BAE5B /* RewardsService.swift */,
+				93FD40071EE39396001BAE5B /* Reward.swift */,
 			);
 			path = PayWise;
 			sourceTree = "<group>";
@@ -147,6 +159,7 @@
 				TargetAttributes = {
 					931ADE061EDBCAFF0063D45A = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MH65659B7Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -235,14 +248,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */,
 				931ADE0F1EDBCB000063D45A /* SecondViewController.swift in Sources */,
 				93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */,
 				93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */,
+				93FD40081EE39396001BAE5B /* Reward.swift in Sources */,
 				931ADE251EDBE2200063D45A /* Card.swift in Sources */,
 				931ADE0B1EDBCB000063D45A /* AppDelegate.swift in Sources */,
+				93FD40021EE36889001BAE5B /* GoogleMapService.swift in Sources */,
 				931ADE0D1EDBCB000063D45A /* FirstViewController.swift in Sources */,
 				93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */,
 				931ADE211EDBDED70063D45A /* RestApiManager.swift in Sources */,
+				93FD40061EE39274001BAE5B /* RewardsService.swift in Sources */,
 				93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */,
 				931ADE1F1EDBDB940063D45A /* MyCardsService.swift in Sources */,
 			);
@@ -368,7 +385,9 @@
 			baseConfigurationReference = F840BC32DAEE042A7FF020FB /* Pods-PayWise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MH65659B7Z;
 				INFOPLIST_FILE = PayWise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanzhan.PayWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,7 +400,9 @@
 			baseConfigurationReference = 451E57461B1FC9B8E4B993F7 /* Pods-PayWise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MH65659B7Z;
 				INFOPLIST_FILE = PayWise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanzhan.PayWise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
