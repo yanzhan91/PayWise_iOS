@@ -24,6 +24,8 @@ final class SecondViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         myCardService.getMyCards() { response in
             self.myCards = response
+            let defaults = UserDefaults.standard
+            defaults.set(self.myCards.count, forKey: "cardsAdded")
             self.collectionView?.reloadData()
         }
     }

@@ -31,6 +31,10 @@ class FirstViewController : UIViewController {
         self.setButtonBorder(button: self.categoryButton)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkForAddedCards()
+    }
+    
     func setButtonBorder(button: UIButton) {
         button.backgroundColor = .clear
         button.layer.borderColor = self.nearYouButton?.currentTitleColor.cgColor
@@ -41,6 +45,21 @@ class FirstViewController : UIViewController {
     @IBAction func findLocation(_ sender: Any) {
         self.present(placePicker, animated: true, completion: nil)
     }
+    
+    func checkForAddedCards() {
+        let defaults = UserDefaults.standard
+        if (defaults.integer(forKey: "cardsAdded") == 0) {
+            let addCardAlert = UIAlertController.init(title: "Add your cards", message: "To see your rewards, please first tell us what cards you have", preferredStyle: .alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+                self.tabBarController?.selectedIndex = 1
+            }
+            
+            addCardAlert.addAction(OKAction)
+            
+            self.present(addCardAlert, animated: true)
+        }
+    }
 }
 
 extension FirstViewController : GMSPlacePickerViewControllerDelegate {
@@ -50,7 +69,6 @@ extension FirstViewController : GMSPlacePickerViewControllerDelegate {
         rewardsVC.placeName = place.name
         viewController.dismiss(animated: true)
         self.navigationController?.pushViewController(rewardsVC, animated: true)
-        
     }
     
     func placePicker(_ viewController: GMSPlacePickerViewController, didFailWithError error: Error) {

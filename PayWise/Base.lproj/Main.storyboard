@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Rewards-->
+        <!--PayWise-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="9pv-A4-QxB" customClass="FirstViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,7 +122,7 @@
                             <constraint firstItem="H9J-Y0-Nme" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="50" id="WLl-CF-qnW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Rewards" id="g86-0H-gC0"/>
+                    <navigationItem key="navigationItem" title="PayWise" id="g86-0H-gC0"/>
                     <connections>
                         <outlet property="categoryButton" destination="sbN-OU-ykU" id="IRX-V6-qgj"/>
                         <outlet property="databaseButton" destination="jOd-Eu-AOO" id="Glh-qM-m4V"/>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="727.20000000000005" y="-849.62518740629696"/>
         </scene>
-        <!--Stores View Controller-->
+        <!--Stores-->
         <scene sceneID="AQy-hV-Lu1">
             <objects>
-                <tableViewController id="wfi-Ac-SwI" customClass="StoresViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Stores" id="wfi-Ac-SwI" customClass="StoresViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K2I-GH-6HY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="1854" y="-986"/>
         </scene>
-        <!--Rewards View Controller-->
+        <!--Rewards-->
         <scene sceneID="Wee-ML-8yD">
             <objects>
-                <tableViewController storyboardIdentifier="RewardsVC" id="bYH-GC-5wS" customClass="RewardsViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RewardsVC" title="Rewards" id="bYH-GC-5wS" customClass="RewardsViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" id="3jV-wP-NtG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +347,7 @@
         <scene sceneID="E4g-Sl-O5n">
             <objects>
                 <collectionViewController id="5tB-4y-h1Y" customClass="SecondViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xfG-5V-2wn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xfG-5V-2wn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -381,17 +381,17 @@
                                             <rect key="frame" x="5" y="5" width="159" height="109"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_delete_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qno-Q7-8SV">
-                                                    <rect key="frame" x="54.5" y="29" width="50" height="50"/>
+                                                    <rect key="frame" x="134" y="0.0" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="JmB-5X-YrC"/>
-                                                        <constraint firstAttribute="height" constant="50" id="KAR-zH-XiT"/>
+                                                        <constraint firstAttribute="height" constant="25" id="5fF-Sa-zD1"/>
+                                                        <constraint firstAttribute="width" constant="25" id="gaW-Jh-JWs"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="qno-Q7-8SV" firstAttribute="centerY" secondItem="LZg-wo-dJV" secondAttribute="centerY" id="Smv-lA-X0S"/>
-                                                <constraint firstItem="qno-Q7-8SV" firstAttribute="centerX" secondItem="LZg-wo-dJV" secondAttribute="centerX" id="SzC-wf-aSR"/>
+                                                <constraint firstItem="qno-Q7-8SV" firstAttribute="top" secondItem="LZg-wo-dJV" secondAttribute="top" id="OwY-2W-gYh"/>
+                                                <constraint firstAttribute="trailing" secondItem="qno-Q7-8SV" secondAttribute="trailing" id="qvZ-9n-O8x"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -440,10 +440,10 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="89.505247376311857"/>
         </scene>
-        <!--Category View Controller-->
+        <!--Categories-->
         <scene sceneID="zjw-2K-JNd">
             <objects>
-                <tableViewController id="t6y-G6-cWL" customClass="CategoryViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Categories" id="t6y-G6-cWL" customClass="CategoryViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yed-N4-46M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,7 +464,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J8F-w9-Htt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rewards" image="rewards_tab" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="16C-0K-fRe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="16C-0K-fRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -483,7 +483,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M8o-M1-lxt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Cards" image="cards_tab" id="PIU-Ug-ODy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H0i-Uc-ck8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H0i-Uc-ck8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

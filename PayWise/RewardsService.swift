@@ -14,17 +14,6 @@ class RewardsService {
     
     func getRewards(name: String?, category: String?, completionHandler: @escaping (Array<Reward>) -> Void) {
         
-//        var query : String?
-//        if (name?.isEmpty) {
-//            query = "name=" + (name.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)!
-//        } else if (category?.isEmpty) {
-//            query = "category=" + (category.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)!
-//        }
-//        
-//        let urlPath = "/rewards?user_id=" + user_id + "&name=" + query
-        
-        
-        
         let nameQuery = (name ?? "").addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         let categoryQuery = (category ?? "").addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         
