@@ -23,4 +23,16 @@ class ResourceGetService {
             completionHandler(allCards)
         }
     }
+    
+    func getAllStores(completionHandler: @escaping (Array<String>) -> Void) {
+        RestApiManager.sharedInstance.getResponse(urlPath: "/stores", method: "GET", parameters: nil) { json in
+            
+            var allStores = [String]()
+            json.array!.forEach() { store in
+                allStores.append(store.rawString()!)
+            }
+            
+            completionHandler(allStores)
+        }
+    }
 }

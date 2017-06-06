@@ -11,17 +11,12 @@ import Alamofire
 import GooglePlacePicker
 
 class FirstViewController : UIViewController {
-
-    fileprivate let user_id = UIDevice.current.identifierForVendor!.uuidString
-    
-    fileprivate let rewardsService = RewardsService()
-    
-    fileprivate var rewards = [Reward]()
     
     fileprivate var placePicker: GMSPlacePickerViewController!
     
-    @IBOutlet weak var rewardsTable: UITableView!
-    
+    @IBOutlet weak var nearYouButton: UIButton?
+    @IBOutlet weak var databaseButton: UIButton?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +24,20 @@ class FirstViewController : UIViewController {
         placePicker = GMSPlacePickerViewController(config: config)
         placePicker.delegate = self
         placePicker.modalPresentationStyle = .popover
+        
+        self.setButtonBorder()
+    }
+    
+    func setButtonBorder() {
+        self.nearYouButton?.backgroundColor = .clear
+        self.nearYouButton?.layer.borderColor = self.nearYouButton?.currentTitleColor.cgColor
+        self.nearYouButton?.layer.borderWidth = 1
+        self.nearYouButton?.layer.cornerRadius = 5
+        
+        self.databaseButton?.backgroundColor = .clear
+        self.databaseButton?.layer.borderColor = self.databaseButton?.currentTitleColor.cgColor
+        self.databaseButton?.layer.borderWidth = 1
+        self.databaseButton?.layer.cornerRadius = 5
     }
     
     @IBAction func findLocation(_ sender: Any) {
@@ -39,10 +48,13 @@ class FirstViewController : UIViewController {
 extension FirstViewController : GMSPlacePickerViewControllerDelegate {
     func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
         print(place)
-        rewardsService.getRewards(name: place.name) { rewards in
-            self.rewards = rewards
-            self.rewardsTable.reloadData()
-        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
+        rewardsVC.placeName = place.name
+        viewController.dismiss(animated: true)
+        self.present(rewardsVC, animated: true, completion: nil)
+        
     }
     
     func placePicker(_ viewController: GMSPlacePickerViewController, didFailWithError error: Error) {
@@ -53,22 +65,3 @@ extension FirstViewController : GMSPlacePickerViewControllerDelegate {
         viewController.dismiss(animated: true, completion: nil)
     }
 }
-
-extension FirstViewController : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = rewardsTable.dequeueReusableCell(withIdentifier: "RewardCell", for: indexPath) as! RewardsCell
-        let reward = self.rewards[indexPath.row]
-        cell.cardName.text = reward.cardName
-        cell.cardImage.image = UIImage.init(named: "amazon-prime-rewards")
-        cell.rewardPercent.text = String(reward.reward) + "%"
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rewards.count
-    }
-
-    
-}
-
