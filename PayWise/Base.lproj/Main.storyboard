@@ -162,63 +162,92 @@
         <!--Rewards View Controller-->
         <scene sceneID="Wee-ML-8yD">
             <objects>
-                <tableViewController storyboardIdentifier="RewardsVC" automaticallyAdjustsScrollViewInsets="NO" id="bYH-GC-5wS" customClass="RewardsViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="178" sectionHeaderHeight="28" sectionFooterHeight="28" id="3jV-wP-NtG">
+                <tableViewController storyboardIdentifier="RewardsVC" id="bYH-GC-5wS" customClass="RewardsViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" id="3jV-wP-NtG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RewardsCell" rowHeight="178" id="6MQ-ZK-D0L" customClass="RewardsCell" customModule="PayWise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="178"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RewardsCell" rowHeight="143" id="6MQ-ZK-D0L" customClass="RewardsCell" customModule="PayWise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6MQ-ZK-D0L" id="y1D-5M-lC5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YNb-vg-Rdy">
-                                            <rect key="frame" x="135" y="51" width="232" height="94"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nes-q6-pl6">
-                                            <rect key="frame" x="17" y="51" width="110" height="83"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0F-kx-mhh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0F-kx-mhh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOQ-7U-kmm">
-                                                    <rect key="frame" x="88" y="11" width="279" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="279" id="TDX-Am-l56"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgx-g9-SIc">
-                                                    <rect key="frame" x="141" y="22" width="66" height="28"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgx-g9-SIc">
+                                                    <rect key="frame" x="8" y="4" width="66" height="28"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A7-79-cOf">
-                                                            <rect key="frame" x="12" y="-10" width="42" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A7-79-cOf">
+                                                            <rect key="frame" x="12" y="4" width="42" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="Kpd-r7-SR9"/>
+                                                                <constraint firstAttribute="width" constant="42" id="WOW-D9-4TV"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="3A7-79-cOf" firstAttribute="centerY" secondItem="Fgx-g9-SIc" secondAttribute="centerY" id="0vZ-CP-wiv"/>
+                                                        <constraint firstItem="3A7-79-cOf" firstAttribute="centerX" secondItem="Fgx-g9-SIc" secondAttribute="centerX" id="8Fe-Ha-UrD"/>
+                                                        <constraint firstAttribute="height" constant="28" id="fd2-v1-HWH"/>
+                                                    </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOQ-7U-kmm">
+                                                    <rect key="frame" x="88" y="8" width="279" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="279" id="TDX-Am-l56"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="279" id="uyC-iI-WWr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.81606217619999999" green="0.81606217619999999" blue="0.81606217619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="Fgx-g9-SIc" firstAttribute="centerY" secondItem="a0F-kx-mhh" secondAttribute="centerY" id="VPn-CM-kcY"/>
+                                                <constraint firstItem="HOQ-7U-kmm" firstAttribute="leading" secondItem="Fgx-g9-SIc" secondAttribute="trailing" constant="14" id="Afx-SS-NrR"/>
+                                                <constraint firstItem="Fgx-g9-SIc" firstAttribute="centerY" secondItem="a0F-kx-mhh" secondAttribute="centerY" id="GdD-Vv-WZI"/>
+                                                <constraint firstAttribute="height" constant="37" id="HIG-Bl-VhL"/>
+                                                <constraint firstAttribute="trailing" secondItem="HOQ-7U-kmm" secondAttribute="trailing" constant="8" id="Mpk-GY-j08"/>
+                                                <constraint firstItem="HOQ-7U-kmm" firstAttribute="leading" secondItem="Fgx-g9-SIc" secondAttribute="trailing" constant="14" id="SKj-pl-WmB"/>
+                                                <constraint firstItem="HOQ-7U-kmm" firstAttribute="centerY" secondItem="a0F-kx-mhh" secondAttribute="centerY" id="r39-MZ-xgl"/>
+                                                <constraint firstItem="Fgx-g9-SIc" firstAttribute="leading" secondItem="a0F-kx-mhh" secondAttribute="leading" constant="8" id="xbU-Nq-yUp"/>
                                             </constraints>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nes-q6-pl6">
+                                            <rect key="frame" x="17" y="47" width="110" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="Qde-oH-cy8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNb-vg-Rdy">
+                                            <rect key="frame" x="135" y="47" width="232" height="83"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="a0F-kx-mhh" firstAttribute="top" secondItem="y1D-5M-lC5" secondAttribute="top" id="27h-J8-HUF"/>
+                                        <constraint firstItem="YNb-vg-Rdy" firstAttribute="top" secondItem="a0F-kx-mhh" secondAttribute="bottom" constant="10" id="9Ib-lB-Wvb"/>
+                                        <constraint firstItem="YNb-vg-Rdy" firstAttribute="leading" secondItem="nes-q6-pl6" secondAttribute="trailing" constant="8" id="Mzw-vm-qFH"/>
+                                        <constraint firstItem="YNb-vg-Rdy" firstAttribute="leading" secondItem="nes-q6-pl6" secondAttribute="trailing" constant="8" id="SGr-7a-3b1"/>
+                                        <constraint firstItem="nes-q6-pl6" firstAttribute="top" secondItem="a0F-kx-mhh" secondAttribute="bottom" constant="10" id="U16-qy-Wp0"/>
+                                        <constraint firstAttribute="trailing" secondItem="a0F-kx-mhh" secondAttribute="trailing" id="ahO-1c-eEF"/>
+                                        <constraint firstItem="YNb-vg-Rdy" firstAttribute="trailing" secondItem="y1D-5M-lC5" secondAttribute="trailingMargin" id="b7u-eE-Vfh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YNb-vg-Rdy" secondAttribute="bottom" constant="4.5" id="cJR-bw-nhE"/>
+                                        <constraint firstItem="nes-q6-pl6" firstAttribute="leading" secondItem="y1D-5M-lC5" secondAttribute="leadingMargin" constant="9" id="fm1-FS-IaD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nes-q6-pl6" secondAttribute="bottom" constant="4.5" id="qFs-gC-UCL"/>
+                                        <constraint firstItem="a0F-kx-mhh" firstAttribute="leading" secondItem="y1D-5M-lC5" secondAttribute="leading" id="uhQ-4z-ad4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="CardDesc" destination="YNb-vg-Rdy" id="Kfd-4C-LCh"/>

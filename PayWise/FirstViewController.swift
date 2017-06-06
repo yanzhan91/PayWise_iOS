@@ -53,7 +53,7 @@ extension FirstViewController : GMSPlacePickerViewControllerDelegate {
         let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
         rewardsVC.placeName = place.name
         viewController.dismiss(animated: true)
-        self.present(rewardsVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(rewardsVC, animated: true)
         
     }
     
