@@ -17,6 +17,7 @@
 		931ADE211EDBDED70063D45A /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE201EDBDED70063D45A /* RestApiManager.swift */; };
 		931ADE251EDBE2200063D45A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE241EDBE2200063D45A /* Card.swift */; };
 		93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93551EE51EDD1282007771E3 /* MyCardCell.swift */; };
+		93728B371EE662B500F5115E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93728B361EE662B500F5115E /* CategoryViewController.swift */; };
 		93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8511EE1A78E009FEB42 /* CustomTap.swift */; };
 		93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8531EE28760009FEB42 /* PopoverController.swift */; };
 		93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */; };
@@ -46,6 +47,7 @@
 		931ADE201EDBDED70063D45A /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		931ADE241EDBE2200063D45A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		93551EE51EDD1282007771E3 /* MyCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCardCell.swift; sourceTree = "<group>"; };
+		93728B361EE662B500F5115E /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		93A4A8511EE1A78E009FEB42 /* CustomTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTap.swift; sourceTree = "<group>"; };
 		93A4A8531EE28760009FEB42 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceGetService.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				93D798FE1EE51AA7004D89EA /* StoresViewController.swift */,
 				93D799001EE59A38004D89EA /* SearchCell.swift */,
 				93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */,
+				93728B361EE662B500F5115E /* CategoryViewController.swift */,
 			);
 			path = PayWise;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */,
 				93D798F91EE48AC0004D89EA /* DashLine.swift in Sources */,
 				931ADE0F1EDBCB000063D45A /* SecondViewController.swift in Sources */,
+				93728B371EE662B500F5115E /* CategoryViewController.swift in Sources */,
 				93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */,
 				93D798FF1EE51AA7004D89EA /* StoresViewController.swift in Sources */,
 				93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */,

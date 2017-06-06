@@ -69,4 +69,24 @@ extension StoresViewController {
             return self.stores.count
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var place : String?
+        
+        if (searchController.isActive && searchController.searchBar.text != "") {
+            if (indexPath.row == 0) {
+                place = self.searchController.searchBar.text
+            } else {
+                place = self.filteredStores[indexPath.row - 1]
+            }
+        } else {
+            place = self.stores[indexPath.row]
+        }
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
+        rewardsVC.placeName = place
+        self.navigationController?.pushViewController(rewardsVC, animated: true)
+    }
 }

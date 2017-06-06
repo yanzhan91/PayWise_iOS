@@ -22,8 +22,6 @@ class RewardsService {
                 
                 var descs = [String]()
                 
-                print(rewardJson)
-                
                 rewardJson["rewards_desc"].array!.forEach() { desc in
                     descs.append(desc.rawString()!)
                 }

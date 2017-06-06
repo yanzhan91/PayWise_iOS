@@ -16,6 +16,7 @@ class FirstViewController : UIViewController {
     
     @IBOutlet weak var nearYouButton: UIButton?
     @IBOutlet weak var databaseButton: UIButton?
+    @IBOutlet weak var categoryButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +26,16 @@ class FirstViewController : UIViewController {
         placePicker.delegate = self
         placePicker.modalPresentationStyle = .popover
         
-        self.setButtonBorder()
+        self.setButtonBorder(button: self.nearYouButton!)
+        self.setButtonBorder(button: self.databaseButton!)
+        self.setButtonBorder(button: self.categoryButton)
     }
     
-    func setButtonBorder() {
-        self.nearYouButton?.backgroundColor = .clear
-        self.nearYouButton?.layer.borderColor = self.nearYouButton?.currentTitleColor.cgColor
-        self.nearYouButton?.layer.borderWidth = 1
-        self.nearYouButton?.layer.cornerRadius = 5
-        
-        self.databaseButton?.backgroundColor = .clear
-        self.databaseButton?.layer.borderColor = self.databaseButton?.currentTitleColor.cgColor
-        self.databaseButton?.layer.borderWidth = 1
-        self.databaseButton?.layer.cornerRadius = 5
+    func setButtonBorder(button: UIButton) {
+        button.backgroundColor = .clear
+        button.layer.borderColor = self.nearYouButton?.currentTitleColor.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 5
     }
     
     @IBAction func findLocation(_ sender: Any) {

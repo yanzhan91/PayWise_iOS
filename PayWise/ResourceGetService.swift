@@ -35,4 +35,16 @@ class ResourceGetService {
             completionHandler(allStores)
         }
     }
+    
+    func getAllCategories(completionHandler: @escaping (Array<String>) -> Void) {
+        RestApiManager.sharedInstance.getResponse(urlPath: "/categories", method: "GET", parameters: nil) { json in
+            
+            var allCategories = [String]()
+            json.array!.forEach() { category in
+                allCategories.append(category.rawString()!)
+            }
+            
+            completionHandler(allCategories)
+        }
+    }
 }

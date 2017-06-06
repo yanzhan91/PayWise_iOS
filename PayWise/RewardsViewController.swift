@@ -33,6 +33,7 @@ extension RewardsViewController {
         cell.rewardPercent.text = String(reward.reward) + "%"
 
         cell.CardDesc.attributedText = formatBulletParagraph(bulletArray: reward.rewardDesc)
+        cell.CardDesc.isScrollEnabled = false
         cell.rewardColor.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 1)
 
         return cell
