@@ -45,8 +45,6 @@ class FirstViewController : UIViewController {
 
 extension FirstViewController : GMSPlacePickerViewControllerDelegate {
     func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
-        print(place)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
         rewardsVC.placeName = place.name

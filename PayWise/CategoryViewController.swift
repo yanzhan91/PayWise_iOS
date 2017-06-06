@@ -35,7 +35,7 @@ extension CategoryViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
-        rewardsVC.placeName = self.categories[indexPath.row]
+        rewardsVC.categoryName = self.categories[indexPath.row]
         self.navigationController?.pushViewController(rewardsVC, animated: true)
     }
 }

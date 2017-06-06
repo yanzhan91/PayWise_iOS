@@ -14,10 +14,11 @@ class RewardsViewController : UITableViewController {
     fileprivate var rewards = [Reward]()
     
     var placeName : String?
+    var categoryName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rewardsService.getRewards(name: placeName!) { rewards in
+        rewardsService.getRewards(name: placeName, category: categoryName) { rewards in
             self.rewards = rewards
             self.tableView.reloadData()
         }

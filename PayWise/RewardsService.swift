@@ -12,9 +12,24 @@ import SwiftyJSON
 class RewardsService {
     let user_id = UIDevice.current.identifierForVendor!.uuidString
     
-    func getRewards(name: String!, completionHandler: @escaping (Array<Reward>) -> Void) {
+    func getRewards(name: String?, category: String?, completionHandler: @escaping (Array<Reward>) -> Void) {
         
-        let urlPath = "/rewards?user_id=" + user_id + "&name=" + (name.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)
+//        var query : String?
+//        if (name?.isEmpty) {
+//            query = "name=" + (name.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)!
+//        } else if (category?.isEmpty) {
+//            query = "category=" + (category.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)!
+//        }
+//        
+//        let urlPath = "/rewards?user_id=" + user_id + "&name=" + query
+        
+        
+        
+        let nameQuery = (name ?? "").addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+        let categoryQuery = (category ?? "").addingPercentEncoding(withAllowedCharacters: .alphanumerics)
+        
+        let urlPath = "/rewards?name=\(nameQuery!)&category=\(categoryQuery!)&user_id=\(user_id)"
+        
         print(urlPath)
         RestApiManager.sharedInstance.getResponse(urlPath: urlPath, method: "GET", parameters: nil) { json in
             var rewards = [Reward]()

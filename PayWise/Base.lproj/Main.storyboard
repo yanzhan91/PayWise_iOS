@@ -347,7 +347,7 @@
         <scene sceneID="E4g-Sl-O5n">
             <objects>
                 <collectionViewController id="5tB-4y-h1Y" customClass="SecondViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xfG-5V-2wn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xfG-5V-2wn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -440,10 +440,10 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="89.505247376311857"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Category View Controller-->
         <scene sceneID="zjw-2K-JNd">
             <objects>
-                <tableViewController id="t6y-G6-cWL" sceneMemberID="viewController">
+                <tableViewController id="t6y-G6-cWL" customClass="CategoryViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yed-N4-46M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,7 +464,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J8F-w9-Htt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Rewards" image="rewards_tab" id="acW-dT-cKf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="16C-0K-fRe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="16C-0K-fRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -483,7 +483,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M8o-M1-lxt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Cards" image="cards_tab" id="PIU-Ug-ODy"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="H0i-Uc-ck8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H0i-Uc-ck8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
