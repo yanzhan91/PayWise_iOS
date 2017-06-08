@@ -22,7 +22,7 @@ class StoresViewController : UITableViewController {
         super.viewDidLoad()
         self.activityContainer = ActivityIndicator.init(parentView: self.view)
         self.activityContainer?.startActivityIndicator()
-        resourceGetService.getAllStores() { response in
+        resourceGetService.getAllResource(resource: "/stores") { response in
             self.stores = response
             self.tableView.reloadData()
             self.activityContainer?.stopActivityIndicator()

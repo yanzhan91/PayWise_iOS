@@ -10,41 +10,16 @@ import Foundation
 import SwiftyJSON
 
 class ResourceGetService {
-    func getAllCards(completionHandler: @escaping (Array<String>) -> Void) {
-        
-        RestApiManager.sharedInstance.getResponse(urlPath: "/cards", method: "GET", parameters: nil) {
-            json in
-            
-            var allCards = [String]()
-            json.array!.forEach() { cardName in
-                allCards.append(cardName.rawString()!)
-            }
-            
-            completionHandler(allCards)
-        }
-    }
     
-    func getAllStores(completionHandler: @escaping (Array<String>) -> Void) {
-        RestApiManager.sharedInstance.getResponse(urlPath: "/stores", method: "GET", parameters: nil) { json in
+    func getAllResource(resource: String, completionHandler: @escaping (Array<String>) -> Void) {
+        RestApiManager.sharedInstance.getResponse(urlPath: resource, method: "GET", parameters: nil) { json in
             
-            var allStores = [String]()
-            json.array!.forEach() { store in
-                allStores.append(store.rawString()!)
+            var allResource = [String]()
+            json.array!.forEach() { resource in
+                allResource.append(resource.rawString()!)
             }
             
-            completionHandler(allStores)
-        }
-    }
-    
-    func getAllCategories(completionHandler: @escaping (Array<String>) -> Void) {
-        RestApiManager.sharedInstance.getResponse(urlPath: "/categories", method: "GET", parameters: nil) { json in
-            
-            var allCategories = [String]()
-            json.array!.forEach() { category in
-                allCategories.append(category.rawString()!)
-            }
-            
-            completionHandler(allCategories)
+            completionHandler(allResource)
         }
     }
 }

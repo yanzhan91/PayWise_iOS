@@ -29,7 +29,7 @@ class PopoverController : UITableViewController {
         self.activityContainer?.startActivityIndicator()
         
         print("Getting All Cards")
-        resourceGetService.getAllCards() { response in
+        resourceGetService.getAllResource(resource: "/cards") { response in
             self.allCards = response
             self.tableView.reloadData()
             self.activityContainer?.stopActivityIndicator()

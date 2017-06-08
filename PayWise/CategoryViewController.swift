@@ -18,7 +18,7 @@ class CategoryViewController : UITableViewController {
         super.viewDidLoad()
         self.activityContainer = ActivityIndicator.init(parentView: self.view)
         self.activityContainer?.startActivityIndicator()
-        resourceGetService.getAllCategories() { response in
+        resourceGetService.getAllResource(resource: "/categories") { response in
             self.categories = response
             self.tableView.reloadData()
             self.activityContainer?.stopActivityIndicator()
