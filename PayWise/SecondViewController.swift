@@ -17,21 +17,27 @@ final class SecondViewController: UICollectionViewController {
     
     fileprivate let itemsPerRow: CGFloat = 2
     
+    fileprivate var activityContainer : ActivityIndicator?
+    
     fileprivate var myCards = [Card]()
     
     fileprivate var deleteMode = false
     
     override func viewWillAppear(_ animated: Bool) {
+        self.activityContainer?.startActivityIndicator()
         myCardService.getMyCards() { response in
             self.myCards = response
             let defaults = UserDefaults.standard
             defaults.set(self.myCards.count, forKey: "cardsAdded")
             self.collectionView?.reloadData()
+            self.activityContainer?.stopActivityIndicator()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityContainer = ActivityIndicator.init(parentView: self.view)
+        self.activityContainer?.startActivityIndicator()
     }
     
     @IBAction func addCards(_ sender: UIBarButtonItem) {
@@ -77,9 +83,11 @@ extension SecondViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (deleteMode) {
+            self.activityContainer?.startActivityIndicator()
             myCardService.deleteCard(cardName: myCards[indexPath.row].card_name) { json in
                 print("deleteing")
                 print(json)
+                self.activityContainer?.stopActivityIndicator()
             }
             print(indexPath.row)
             myCards.remove(at: indexPath.row)

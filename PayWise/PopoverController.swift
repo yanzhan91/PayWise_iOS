@@ -17,22 +17,27 @@ class PopoverController : UITableViewController {
     fileprivate var allCards = [String]()
     fileprivate var filteredCards = [String]()
     
+    fileprivate var activityContainer: ActivityIndicator?
+    
     override func viewDidLoad() {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
+        self.activityContainer = ActivityIndicator.init(parentView: self.view)
+        self.activityContainer?.startActivityIndicator()
+        
         print("Getting All Cards")
         resourceGetService.getAllCards() { response in
             self.allCards = response
             self.tableView.reloadData()
+            self.activityContainer?.stopActivityIndicator()
         }
     }
 }
 
 extension PopoverController : UISearchResultsUpdating {
-    @available(iOS 8.0, *)
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
 
@@ -68,6 +73,7 @@ extension PopoverController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.activityContainer?.startActivityIndicator()
         var selectedCard : String
         if searchController.isActive && searchController.searchBar.text != "" {
             selectedCard = filteredCards[indexPath.row]
@@ -77,6 +83,7 @@ extension PopoverController {
         
         myCardsService.addCard(cardName: selectedCard) { json in
             print(json)
+            self.activityContainer?.stopActivityIndicator()
             self.navigationController?.popViewController(animated: true)
         }
     }

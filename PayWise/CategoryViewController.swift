@@ -12,11 +12,16 @@ class CategoryViewController : UITableViewController {
     fileprivate let resourceGetService = ResourceGetService()
     fileprivate var categories = [String]()
     
+    fileprivate var activityContainer: ActivityIndicator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityContainer = ActivityIndicator.init(parentView: self.view)
+        self.activityContainer?.startActivityIndicator()
         resourceGetService.getAllCategories() { response in
             self.categories = response
             self.tableView.reloadData()
+            self.activityContainer?.stopActivityIndicator()
         }
     }
 }

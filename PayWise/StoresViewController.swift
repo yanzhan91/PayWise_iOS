@@ -16,11 +16,16 @@ class StoresViewController : UITableViewController {
     fileprivate var stores = [String]()
     fileprivate var filteredStores = [String]()
     
+    fileprivate var activityContainer: ActivityIndicator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityContainer = ActivityIndicator.init(parentView: self.view)
+        self.activityContainer?.startActivityIndicator()
         resourceGetService.getAllStores() { response in
             self.stores = response
             self.tableView.reloadData()
+            self.activityContainer?.stopActivityIndicator()
         }
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false

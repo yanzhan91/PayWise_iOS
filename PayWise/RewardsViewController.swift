@@ -16,11 +16,16 @@ class RewardsViewController : UITableViewController {
     var placeName : String?
     var categoryName : String?
     
+    fileprivate var activityContainer: ActivityIndicator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityContainer = ActivityIndicator.init(parentView: self.view)
+        self.activityContainer?.startActivityIndicator()
         rewardsService.getRewards(name: placeName, category: categoryName) { rewards in
             self.rewards = rewards
             self.tableView.reloadData()
+            self.activityContainer?.stopActivityIndicator()
         }
     }
 }
