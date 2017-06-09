@@ -51,7 +51,7 @@ class FirstViewController : UIViewController {
         if (defaults.integer(forKey: "cardsAdded") == 0) {
             let addCardAlert = UIAlertController.init(title: "Add your cards", message: "To see your rewards, please first tell us what cards you have", preferredStyle: .alert)
             
-            let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            let OKAction = UIAlertAction(title: "OK", style: .default) { action in
                 self.tabBarController?.selectedIndex = 1
             }
             

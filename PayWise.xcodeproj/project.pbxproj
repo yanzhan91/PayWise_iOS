@@ -105,32 +105,48 @@
 		931ADE091EDBCB000063D45A /* PayWise */ = {
 			isa = PBXGroup;
 			children = (
+				938914DC1EE98F790058D038 /* Rewards */,
+				938914DD1EE98FCE0058D038 /* MyCards */,
 				931ADE0A1EDBCB000063D45A /* AppDelegate.swift */,
-				931ADE0C1EDBCB000063D45A /* FirstViewController.swift */,
-				931ADE0E1EDBCB000063D45A /* SecondViewController.swift */,
 				931ADE101EDBCB000063D45A /* Main.storyboard */,
 				931ADE131EDBCB000063D45A /* Assets.xcassets */,
 				931ADE151EDBCB000063D45A /* LaunchScreen.storyboard */,
 				931ADE181EDBCB000063D45A /* Info.plist */,
-				931ADE1E1EDBDB940063D45A /* MyCardsService.swift */,
 				931ADE201EDBDED70063D45A /* RestApiManager.swift */,
-				931ADE241EDBE2200063D45A /* Card.swift */,
-				93551EE51EDD1282007771E3 /* MyCardCell.swift */,
 				93A4A8511EE1A78E009FEB42 /* CustomTap.swift */,
-				93A4A8531EE28760009FEB42 /* PopoverController.swift */,
 				93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */,
-				93FD40011EE36889001BAE5B /* GoogleMapService.swift */,
-				93FD40031EE3913E001BAE5B /* RewardsCell.swift */,
-				93FD40051EE39274001BAE5B /* RewardsService.swift */,
-				93FD40071EE39396001BAE5B /* Reward.swift */,
 				93D798F81EE48AC0004D89EA /* DashLine.swift */,
-				93D798FE1EE51AA7004D89EA /* StoresViewController.swift */,
-				93D799001EE59A38004D89EA /* SearchCell.swift */,
-				93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */,
-				93728B361EE662B500F5115E /* CategoryViewController.swift */,
 				938914DA1EE8BF110058D038 /* ActivityIndicator.swift */,
 			);
 			path = PayWise;
+			sourceTree = "<group>";
+		};
+		938914DC1EE98F790058D038 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				931ADE0C1EDBCB000063D45A /* FirstViewController.swift */,
+				93FD40011EE36889001BAE5B /* GoogleMapService.swift */,
+				93D798FE1EE51AA7004D89EA /* StoresViewController.swift */,
+				93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */,
+				93728B361EE662B500F5115E /* CategoryViewController.swift */,
+				93D799001EE59A38004D89EA /* SearchCell.swift */,
+				93FD40031EE3913E001BAE5B /* RewardsCell.swift */,
+				93FD40051EE39274001BAE5B /* RewardsService.swift */,
+				93FD40071EE39396001BAE5B /* Reward.swift */,
+			);
+			name = Rewards;
+			sourceTree = "<group>";
+		};
+		938914DD1EE98FCE0058D038 /* MyCards */ = {
+			isa = PBXGroup;
+			children = (
+				931ADE0E1EDBCB000063D45A /* SecondViewController.swift */,
+				93A4A8531EE28760009FEB42 /* PopoverController.swift */,
+				931ADE241EDBE2200063D45A /* Card.swift */,
+				93551EE51EDD1282007771E3 /* MyCardCell.swift */,
+				931ADE1E1EDBDB940063D45A /* MyCardsService.swift */,
+			);
+			name = MyCards;
 			sourceTree = "<group>";
 		};
 		E2C4AA1ED4A0F6366FE7B778 /* Pods */ = {

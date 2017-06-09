@@ -45,6 +45,7 @@ final class SecondViewController: UICollectionViewController {
         popover.modalPresentationStyle = .popover
         self.navigationController!.pushViewController(popover, animated: true)
     }
+    
     @IBAction func removeCard(_ sender: Any) {
         deleteMode = !deleteMode
         if (deleteMode) {
@@ -53,6 +54,18 @@ final class SecondViewController: UICollectionViewController {
             self.navigationItem.rightBarButtonItems?[1].isEnabled = true
         }
         self.collectionView?.reloadData()
+    }
+    
+    @IBAction func deleteCard(_ sender: Any) {
+        self.activityContainer?.startActivityIndicator()
+        let button = sender as! UIButton
+        myCardService.deleteCard(cardName: myCards[button.tag].card_name) { json in
+            print("deleting")
+            print(json)
+            self.activityContainer?.stopActivityIndicator()
+        }
+        myCards.remove(at: button.tag)
+        self.collectionView?.deleteItems(at: [IndexPath.init(row: button.tag, section: 0)])
     }
 }
 
@@ -76,23 +89,18 @@ extension SecondViewController {
         } else {
             cell.overlay.isHidden = true
         }
-        cell.cardImage.image = UIImage.init(named: "amazon-prime-rewards")
+
+        let url = NSURL(string: cardInfo.card_img)
+        cell.cardImage.image = UIImage.init(named: (url?.lastPathComponent)!)
         cell.cardName.text = cardInfo.card_name
+        
+        cell.deleteButton.tag = indexPath.row
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (deleteMode) {
-            self.activityContainer?.startActivityIndicator()
-            myCardService.deleteCard(cardName: myCards[indexPath.row].card_name) { json in
-                print("deleteing")
-                print(json)
-                self.activityContainer?.stopActivityIndicator()
-            }
-            print(indexPath.row)
-            myCards.remove(at: indexPath.row)
-            collectionView.deleteItems(at: [indexPath])
-        } else {
+        if (!deleteMode) {
             if let url = NSURL(string: myCards[indexPath.row].card_url) {
                 UIApplication.shared.open(url as URL)
             }
@@ -108,7 +116,7 @@ extension SecondViewController : UICollectionViewDelegateFlowLayout {
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
         
-        return CGSize(width: widthPerItem, height: widthPerItem * 0.75)
+        return CGSize(width: widthPerItem, height: widthPerItem * 0.9)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -119,6 +127,16 @@ extension SecondViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension String {
+    func lastIndex(of target: String) -> Int? {
+        if let range = self.range(of: target, options: .backwards) {
+            return characters.distance(from: startIndex, to: range.lowerBound)
+        } else {
+            return nil
+        }
     }
 }
 

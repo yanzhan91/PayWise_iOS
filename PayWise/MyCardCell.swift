@@ -12,4 +12,5 @@ class MyCardCell : UICollectionViewCell {
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var overlay: UIView!
+    @IBOutlet weak var deleteButton: UIButton!
 }
