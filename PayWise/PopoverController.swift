@@ -83,6 +83,10 @@ extension PopoverController {
         
         myCardsService.addCard(cardName: selectedCard) { json in
             print(json)
+            if let navController = self.navigationController, navController.viewControllers.count >= 2 {
+                let parent = navController.viewControllers[navController.viewControllers.count - 2] as! SecondViewController
+                parent.shouldRefreshCards = true
+            }
             self.activityContainer?.stopActivityIndicator()
             self.navigationController?.popViewController(animated: true)
         }

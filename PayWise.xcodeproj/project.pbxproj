@@ -19,10 +19,8 @@
 		93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93551EE51EDD1282007771E3 /* MyCardCell.swift */; };
 		93728B371EE662B500F5115E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93728B361EE662B500F5115E /* CategoryViewController.swift */; };
 		938914DB1EE8BF120058D038 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938914DA1EE8BF110058D038 /* ActivityIndicator.swift */; };
-		93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8511EE1A78E009FEB42 /* CustomTap.swift */; };
 		93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8531EE28760009FEB42 /* PopoverController.swift */; };
 		93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */; };
-		93D798F91EE48AC0004D89EA /* DashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D798F81EE48AC0004D89EA /* DashLine.swift */; };
 		93D798FF1EE51AA7004D89EA /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D798FE1EE51AA7004D89EA /* StoresViewController.swift */; };
 		93D799011EE59A39004D89EA /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D799001EE59A38004D89EA /* SearchCell.swift */; };
 		93FD40021EE36889001BAE5B /* GoogleMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40011EE36889001BAE5B /* GoogleMapService.swift */; };
@@ -50,10 +48,8 @@
 		93551EE51EDD1282007771E3 /* MyCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCardCell.swift; sourceTree = "<group>"; };
 		93728B361EE662B500F5115E /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		938914DA1EE8BF110058D038 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		93A4A8511EE1A78E009FEB42 /* CustomTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTap.swift; sourceTree = "<group>"; };
 		93A4A8531EE28760009FEB42 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceGetService.swift; sourceTree = "<group>"; };
-		93D798F81EE48AC0004D89EA /* DashLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLine.swift; sourceTree = "<group>"; };
 		93D798FE1EE51AA7004D89EA /* StoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
 		93D799001EE59A38004D89EA /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		93FD40011EE36889001BAE5B /* GoogleMapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapService.swift; sourceTree = "<group>"; };
@@ -113,9 +109,7 @@
 				931ADE151EDBCB000063D45A /* LaunchScreen.storyboard */,
 				931ADE181EDBCB000063D45A /* Info.plist */,
 				931ADE201EDBDED70063D45A /* RestApiManager.swift */,
-				93A4A8511EE1A78E009FEB42 /* CustomTap.swift */,
 				93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */,
-				93D798F81EE48AC0004D89EA /* DashLine.swift */,
 				938914DA1EE8BF110058D038 /* ActivityIndicator.swift */,
 			);
 			path = PayWise;
@@ -283,12 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */,
-				93D798F91EE48AC0004D89EA /* DashLine.swift in Sources */,
 				931ADE0F1EDBCB000063D45A /* SecondViewController.swift in Sources */,
 				93728B371EE662B500F5115E /* CategoryViewController.swift in Sources */,
 				93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */,
 				93D798FF1EE51AA7004D89EA /* StoresViewController.swift in Sources */,
-				93A4A8521EE1A78F009FEB42 /* CustomTap.swift in Sources */,
 				93FD40081EE39396001BAE5B /* Reward.swift in Sources */,
 				931ADE251EDBE2200063D45A /* Card.swift in Sources */,
 				931ADE0B1EDBCB000063D45A /* AppDelegate.swift in Sources */,

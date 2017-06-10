@@ -23,14 +23,20 @@ final class SecondViewController: UICollectionViewController {
     
     fileprivate var deleteMode = false
     
+    var shouldRefreshCards = true
+    
     override func viewWillAppear(_ animated: Bool) {
-        self.activityContainer?.startActivityIndicator()
-        myCardService.getMyCards() { response in
-            self.myCards = response
-            let defaults = UserDefaults.standard
-            defaults.set(self.myCards.count, forKey: "cardsAdded")
-            self.collectionView?.reloadData()
-            self.activityContainer?.stopActivityIndicator()
+        print(self.shouldRefreshCards)
+        if (self.shouldRefreshCards) {
+            self.shouldRefreshCards = false
+            self.activityContainer?.startActivityIndicator()
+            myCardService.getMyCards() { response in
+                self.myCards = response
+                let defaults = UserDefaults.standard
+                defaults.set(self.myCards.count, forKey: "cardsAdded")
+                self.collectionView?.reloadData()
+                self.activityContainer?.stopActivityIndicator()
+            }
         }
     }
 
@@ -59,9 +65,11 @@ final class SecondViewController: UICollectionViewController {
     @IBAction func deleteCard(_ sender: Any) {
         self.activityContainer?.startActivityIndicator()
         let button = sender as! UIButton
+        print(button.tag)
         myCardService.deleteCard(cardName: myCards[button.tag].card_name) { json in
             print("deleting")
             print(json)
+            self.collectionView?.reloadData()
             self.activityContainer?.stopActivityIndicator()
         }
         myCards.remove(at: button.tag)
@@ -95,11 +103,13 @@ extension SecondViewController {
         cell.cardName.text = cardInfo.card_name
         
         cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.backgroundColor = UIColor.white
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Heree")
         if (!deleteMode) {
             if let url = NSURL(string: myCards[indexPath.row].card_url) {
                 UIApplication.shared.open(url as URL)
