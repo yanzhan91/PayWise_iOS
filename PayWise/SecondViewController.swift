@@ -26,15 +26,22 @@ final class SecondViewController: UICollectionViewController {
     var shouldRefreshCards = true
     
     override func viewWillAppear(_ animated: Bool) {
-        print(self.shouldRefreshCards)
         if (self.shouldRefreshCards) {
             self.shouldRefreshCards = false
             self.activityContainer?.startActivityIndicator()
-            myCardService.getMyCards() { response in
-                self.myCards = response
-                let defaults = UserDefaults.standard
-                defaults.set(self.myCards.count, forKey: "cardsAdded")
-                self.collectionView?.reloadData()
+            myCardService.getMyCards() { (response, error) in
+                if (error != nil) {
+                    print(type(of: error!))
+                    print(error!.localizedDescription)
+                    self.shouldRefreshCards = true;
+                    let noIntAlert = AlertFactory.getNoInternetAlert()
+                    self.present(noIntAlert, animated: true)
+                } else {
+                    self.myCards = response
+                    let defaults = UserDefaults.standard
+                    defaults.set(self.myCards.count, forKey: "cardsAdded")
+                    self.collectionView?.reloadData()
+                }
                 self.activityContainer?.stopActivityIndicator()
             }
         }

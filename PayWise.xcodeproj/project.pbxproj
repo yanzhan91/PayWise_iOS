@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930283731EF3143200AA8A30 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930283721EF3143200AA8A30 /* AlertFactory.swift */; };
 		931ADE0B1EDBCB000063D45A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE0A1EDBCB000063D45A /* AppDelegate.swift */; };
 		931ADE0D1EDBCB000063D45A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE0C1EDBCB000063D45A /* FirstViewController.swift */; };
 		931ADE0F1EDBCB000063D45A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931ADE0E1EDBCB000063D45A /* SecondViewController.swift */; };
@@ -23,7 +24,6 @@
 		93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */; };
 		93D798FF1EE51AA7004D89EA /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D798FE1EE51AA7004D89EA /* StoresViewController.swift */; };
 		93D799011EE59A39004D89EA /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D799001EE59A38004D89EA /* SearchCell.swift */; };
-		93FD40021EE36889001BAE5B /* GoogleMapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40011EE36889001BAE5B /* GoogleMapService.swift */; };
 		93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40031EE3913E001BAE5B /* RewardsCell.swift */; };
 		93FD40061EE39274001BAE5B /* RewardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40051EE39274001BAE5B /* RewardsService.swift */; };
 		93FD40081EE39396001BAE5B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40071EE39396001BAE5B /* Reward.swift */; };
@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		190690C2411AABF1C35E0D8A /* Pods_PayWise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayWise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		451E57461B1FC9B8E4B993F7 /* Pods-PayWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayWise.release.xcconfig"; path = "Pods/Target Support Files/Pods-PayWise/Pods-PayWise.release.xcconfig"; sourceTree = "<group>"; };
+		930283721EF3143200AA8A30 /* AlertFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		931ADE071EDBCB000063D45A /* PayWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		931ADE0A1EDBCB000063D45A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		931ADE0C1EDBCB000063D45A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceGetService.swift; sourceTree = "<group>"; };
 		93D798FE1EE51AA7004D89EA /* StoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
 		93D799001EE59A38004D89EA /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
-		93FD40011EE36889001BAE5B /* GoogleMapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapService.swift; sourceTree = "<group>"; };
 		93FD40031EE3913E001BAE5B /* RewardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsCell.swift; sourceTree = "<group>"; };
 		93FD40051EE39274001BAE5B /* RewardsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsService.swift; sourceTree = "<group>"; };
 		93FD40071EE39396001BAE5B /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 				931ADE201EDBDED70063D45A /* RestApiManager.swift */,
 				93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */,
 				938914DA1EE8BF110058D038 /* ActivityIndicator.swift */,
+				930283721EF3143200AA8A30 /* AlertFactory.swift */,
 			);
 			path = PayWise;
 			sourceTree = "<group>";
@@ -119,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				931ADE0C1EDBCB000063D45A /* FirstViewController.swift */,
-				93FD40011EE36889001BAE5B /* GoogleMapService.swift */,
 				93D798FE1EE51AA7004D89EA /* StoresViewController.swift */,
 				93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */,
 				93728B361EE662B500F5115E /* CategoryViewController.swift */,
@@ -285,7 +285,6 @@
 				931ADE251EDBE2200063D45A /* Card.swift in Sources */,
 				931ADE0B1EDBCB000063D45A /* AppDelegate.swift in Sources */,
 				93FF3A6A1EE61606007E0BC1 /* RewardsViewController.swift in Sources */,
-				93FD40021EE36889001BAE5B /* GoogleMapService.swift in Sources */,
 				931ADE0D1EDBCB000063D45A /* FirstViewController.swift in Sources */,
 				93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */,
 				931ADE211EDBDED70063D45A /* RestApiManager.swift in Sources */,
@@ -294,6 +293,7 @@
 				93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */,
 				93D799011EE59A39004D89EA /* SearchCell.swift in Sources */,
 				931ADE1F1EDBDB940063D45A /* MyCardsService.swift in Sources */,
+				930283731EF3143200AA8A30 /* AlertFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

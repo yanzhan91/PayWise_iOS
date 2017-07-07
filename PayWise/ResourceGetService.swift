@@ -11,15 +11,14 @@ import SwiftyJSON
 
 class ResourceGetService {
     
-    func getAllResource(resource: String, completionHandler: @escaping (Array<String>) -> Void) {
-        RestApiManager.sharedInstance.getResponse(urlPath: resource, method: "GET", parameters: nil) { json in
-            
+    func getAllResource(resource: String, completionHandler: @escaping (Array<String>, Error?) -> Void) {
+        RestApiManager.sharedInstance.getResponse(urlPath: resource, method: "GET", parameters: nil) { (json, error) in
             var allResource = [String]()
-            json.array!.forEach() { resource in
+            json?.array?.forEach() { resource in
                 allResource.append(resource.rawString()!)
             }
             
-            completionHandler(allResource)
+            completionHandler(allResource, error)
         }
     }
 }

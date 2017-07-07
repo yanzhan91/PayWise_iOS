@@ -12,7 +12,7 @@ import SwiftyJSON
 class RewardsService {
     let user_id = UIDevice.current.identifierForVendor!.uuidString
     
-    func getRewards(name: String?, category: String?, completionHandler: @escaping (Array<Reward>) -> Void) {
+    func getRewards(name: String?, category: String?, completionHandler: @escaping (Array<Reward>, Error?) -> Void) {
         
         let nameQuery = (name ?? "").addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         let categoryQuery = (category ?? "").addingPercentEncoding(withAllowedCharacters: .alphanumerics)
@@ -20,9 +20,9 @@ class RewardsService {
         let urlPath = "/rewards?name=\(nameQuery!)&category=\(categoryQuery!)&user_id=\(user_id)"
         
         print(urlPath)
-        RestApiManager.sharedInstance.getResponse(urlPath: urlPath, method: "GET", parameters: nil) { json in
+        RestApiManager.sharedInstance.getResponse(urlPath: urlPath, method: "GET", parameters: nil) { (json, error) in
             var rewards = [Reward]()
-            json.array!.forEach() { rewardJson in
+            json?.array?.forEach() { rewardJson in
                 
                 var descs = [String]()
                 
@@ -39,7 +39,7 @@ class RewardsService {
                 ))
             }
             
-            completionHandler(rewards)
+            completionHandler(rewards, error)
         }
     }
 }

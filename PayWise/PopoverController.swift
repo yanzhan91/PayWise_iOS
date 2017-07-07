@@ -29,9 +29,16 @@ class PopoverController : UITableViewController {
         self.activityContainer?.startActivityIndicator()
         
         print("Getting All Cards")
-        resourceGetService.getAllResource(resource: "/cards") { response in
-            self.allCards = response
-            self.tableView.reloadData()
+        resourceGetService.getAllResource(resource: "/cards") { (response, error) in
+            if (error != nil) {
+                print(type(of: error!))
+                print(error!.localizedDescription)
+                let noIntAlert = AlertFactory.getNoInternetAlert()
+                self.present(noIntAlert, animated: true)
+            } else {
+                self.allCards = response
+                self.tableView.reloadData()
+            }
             self.activityContainer?.stopActivityIndicator()
         }
     }

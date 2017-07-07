@@ -22,7 +22,16 @@ class RewardsViewController : UITableViewController {
         super.viewDidLoad()
         self.activityContainer = ActivityIndicator.init(parentView: self.view)
         self.activityContainer?.startActivityIndicator()
-        rewardsService.getRewards(name: placeName, category: categoryName) { rewards in
+        rewardsService.getRewards(name: placeName, category: categoryName) { (rewards, error) in
+//            if error != nil {
+//                print(type(of: error))
+//                let addCardAlert = UIAlertController.init(title: "Add your cards", message: "To see your rewards, please first tell us what cards you have", preferredStyle: .alert)
+//                let OKAction = UIAlertAction(title: "OK", style: .default) { action in
+//                    self.navigationController?.popViewController(animated: true)
+//                }
+//                addCardAlert.addAction(OKAction)
+//                self.present(addCardAlert, animated: true)
+//            }
             self.rewards = rewards
             self.tableView.reloadData()
             self.activityContainer?.stopActivityIndicator()
@@ -35,11 +44,13 @@ extension RewardsViewController {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "RewardsCell", for: indexPath) as! RewardsCell
         let reward = self.rewards[indexPath.row]
         cell.cardName.text = reward.cardName
-        cell.cardImage.image = UIImage.init(named: "amazon-prime-rewards")
+        let url = NSURL(string: reward.cardImg)
+        cell.cardImage.image = UIImage.init(named: (url?.lastPathComponent)!)
         cell.rewardPercent.text = String(reward.reward) + "%"
 
         cell.CardDesc.attributedText = formatBulletParagraph(bulletArray: reward.rewardDesc)
         cell.CardDesc.isScrollEnabled = false
+        cell.CardDesc.isEditable = false
         cell.rewardColor.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 1)
 
         return cell

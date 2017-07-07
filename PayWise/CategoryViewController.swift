@@ -18,9 +18,17 @@ class CategoryViewController : UITableViewController {
         super.viewDidLoad()
         self.activityContainer = ActivityIndicator.init(parentView: self.view)
         self.activityContainer?.startActivityIndicator()
-        resourceGetService.getAllResource(resource: "/categories") { response in
-            self.categories = response
-            self.tableView.reloadData()
+        resourceGetService.getAllResource(resource: "/categories") { (response, error) in
+            
+            if (error != nil) {
+                print(type(of: error!))
+                print(error!.localizedDescription)
+                let noIntAlert = AlertFactory.getNoInternetAlert()
+                self.present(noIntAlert, animated: true)
+            } else {
+                self.categories = response
+                self.tableView.reloadData()
+            }
             self.activityContainer?.stopActivityIndicator()
         }
     }

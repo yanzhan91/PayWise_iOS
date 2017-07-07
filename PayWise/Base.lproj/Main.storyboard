@@ -226,12 +226,6 @@
                                                 <constraint firstItem="Fgx-g9-SIc" firstAttribute="leading" secondItem="a0F-kx-mhh" secondAttribute="leading" constant="8" id="xbU-Nq-yUp"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nes-q6-pl6">
-                                            <rect key="frame" x="17" y="47" width="110" height="83"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="110" id="Qde-oH-cy8"/>
-                                            </constraints>
-                                        </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNb-vg-Rdy">
                                             <rect key="frame" x="135" y="47" width="232" height="83"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,18 +233,24 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nes-q6-pl6">
+                                            <rect key="frame" x="17" y="53" width="110" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="Qde-oH-cy8"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="a0F-kx-mhh" firstAttribute="top" secondItem="y1D-5M-lC5" secondAttribute="top" id="27h-J8-HUF"/>
                                         <constraint firstItem="YNb-vg-Rdy" firstAttribute="top" secondItem="a0F-kx-mhh" secondAttribute="bottom" constant="10" id="9Ib-lB-Wvb"/>
                                         <constraint firstItem="YNb-vg-Rdy" firstAttribute="leading" secondItem="nes-q6-pl6" secondAttribute="trailing" constant="8" id="Mzw-vm-qFH"/>
                                         <constraint firstItem="YNb-vg-Rdy" firstAttribute="leading" secondItem="nes-q6-pl6" secondAttribute="trailing" constant="8" id="SGr-7a-3b1"/>
-                                        <constraint firstItem="nes-q6-pl6" firstAttribute="top" secondItem="a0F-kx-mhh" secondAttribute="bottom" constant="10" id="U16-qy-Wp0"/>
+                                        <constraint firstItem="nes-q6-pl6" firstAttribute="top" secondItem="a0F-kx-mhh" secondAttribute="bottom" constant="16" id="U16-qy-Wp0"/>
                                         <constraint firstAttribute="trailing" secondItem="a0F-kx-mhh" secondAttribute="trailing" id="ahO-1c-eEF"/>
                                         <constraint firstItem="YNb-vg-Rdy" firstAttribute="trailing" secondItem="y1D-5M-lC5" secondAttribute="trailingMargin" id="b7u-eE-Vfh"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="YNb-vg-Rdy" secondAttribute="bottom" constant="4.5" id="cJR-bw-nhE"/>
                                         <constraint firstItem="nes-q6-pl6" firstAttribute="leading" secondItem="y1D-5M-lC5" secondAttribute="leadingMargin" constant="9" id="fm1-FS-IaD"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="nes-q6-pl6" secondAttribute="bottom" constant="4.5" id="qFs-gC-UCL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nes-q6-pl6" secondAttribute="bottom" constant="11.5" id="qFs-gC-UCL"/>
                                         <constraint firstItem="a0F-kx-mhh" firstAttribute="leading" secondItem="y1D-5M-lC5" secondAttribute="leading" id="uhQ-4z-ad4"/>
                                     </constraints>
                                 </tableViewCellContentView>

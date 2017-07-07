@@ -22,15 +22,26 @@ class StoresViewController : UITableViewController {
         super.viewDidLoad()
         self.activityContainer = ActivityIndicator.init(parentView: self.view)
         self.activityContainer?.startActivityIndicator()
-        resourceGetService.getAllResource(resource: "/stores") { response in
-            self.stores = response
-            self.tableView.reloadData()
-            self.activityContainer?.stopActivityIndicator()
-        }
+        self.getStores()
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         self.tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    func getStores() {
+        resourceGetService.getAllResource(resource: "/stores") { (response, error) in
+            if (error != nil) {
+                print(type(of: error!))
+                print(error!.localizedDescription)
+                let noIntAlert = AlertFactory.getNoInternetAlert()
+                self.present(noIntAlert, animated: true)
+            } else {
+                self.stores = response
+                self.tableView.reloadData()
+                self.activityContainer?.stopActivityIndicator()
+            }
+        }
     }
 }
 
