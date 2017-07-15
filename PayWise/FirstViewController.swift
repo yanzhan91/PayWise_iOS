@@ -8,27 +8,54 @@
 
 import UIKit
 import Alamofire
-import GooglePlacePicker
 
-class FirstViewController : UIViewController {
+class FirstViewController : UICollectionViewController {
     
-    fileprivate var placePicker: GMSPlacePickerViewController!
+    fileprivate let resourceGetService = ResourceGetService()
+    fileprivate var categories = [String]()
     
-    @IBOutlet weak var nearYouButton: UIButton?
-    @IBOutlet weak var databaseButton: UIButton?
-    @IBOutlet weak var categoryButton: UIButton!
-
+    fileprivate var activityContainer: ActivityIndicator?
+    
+    let cellSpacing = CGFloat(10.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config = GMSPlacePickerConfig(viewport: nil)
-        placePicker = GMSPlacePickerViewController(config: config)
-        placePicker.delegate = self
-        placePicker.modalPresentationStyle = .popover
+        let titleView = UIView()
+        let title = UILabel()
+        title.text = "PayWise"
+        title.textAlignment = .center
         
-        self.setButtonBorder(button: self.nearYouButton!)
-        self.setButtonBorder(button: self.databaseButton!)
-        self.setButtonBorder(button: self.categoryButton)
+        let logo = UIImage(named: "AIRLINE")
+        let image = UIImageView(frame: CGRect(x: 0, y: 0, width:24, height:24))
+        image.image = logo
+        image.contentMode = .scaleAspectFit
+        
+        titleView.addSubview(image)
+        titleView.addSubview(title)
+        
+        self.navigationItem.titleView = titleView
+        
+        titleView.sizeToFit()
+        
+        self.collectionView?.delegate = self
+        
+        self.activityContainer = ActivityIndicator.init(parentView: self.view)
+        self.activityContainer?.startActivityIndicator()
+        resourceGetService.getAllResource(resource: "/categories") { (response, error) in
+            
+            if (error != nil) {
+                print(type(of: error!))
+                print(error!.localizedDescription)
+                let noIntAlert = AlertFactory.getNoInternetAlert()
+                self.present(noIntAlert, animated: true)
+            } else {
+                self.categories = response
+                self.categories.append("MERCHANT")
+                self.collectionView?.reloadData()
+            }
+            self.activityContainer?.stopActivityIndicator()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,13 +64,9 @@ class FirstViewController : UIViewController {
     
     func setButtonBorder(button: UIButton) {
         button.backgroundColor = .clear
-        button.layer.borderColor = self.nearYouButton?.currentTitleColor.cgColor
+        button.layer.borderColor = button.currentTitleColor.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 5
-    }
-    
-    @IBAction func findLocation(_ sender: Any) {
-        self.present(placePicker, animated: true, completion: nil)
     }
     
     func checkForAddedCards() {
@@ -62,20 +85,59 @@ class FirstViewController : UIViewController {
     }
 }
 
-extension FirstViewController : GMSPlacePickerViewControllerDelegate {
-    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+extension FirstViewController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.categories.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categorycell2", for: indexPath) as! CategoryCell
+        let category = self.categories[indexPath.row]
+        if (indexPath.row == self.categories.count - 1) {
+            cell.title?.text = "Merchant (BETA)"
+        } else {
+            cell.title?.text = category
+        }
+        cell.image.image = UIImage(named: category)
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
-        rewardsVC.placeName = place.name
-        viewController.dismiss(animated: true)
-        self.navigationController?.pushViewController(rewardsVC, animated: true)
+        if (indexPath.row == self.categories.count - 1) {
+            let vc = storyboard.instantiateViewController(withIdentifier: "MerchantVC") as! StoresViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
+            rewardsVC.categoryName = self.categories[indexPath.row]
+            self.navigationController?.pushViewController(rewardsVC, animated: true)
+        }
+    }
+}
+
+extension FirstViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemsPerRow = CGFloat(3)
+        let paddingSpace = cellSpacing * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
-    func placePicker(_ viewController: GMSPlacePickerViewController, didFailWithError error: Error) {
-        print(error)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: cellSpacing, right: cellSpacing)
     }
     
-    func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
-        viewController.dismiss(animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }

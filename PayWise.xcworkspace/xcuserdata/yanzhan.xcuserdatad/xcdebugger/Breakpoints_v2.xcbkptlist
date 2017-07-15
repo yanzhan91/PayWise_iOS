@@ -214,7 +214,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayWise/RewardsViewController.swift"
@@ -342,7 +342,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayWise/MyCardsService.swift"
@@ -355,29 +355,29 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PayWise.MyCardsService.(getMyCards (completionHandler : (Swift.Array&lt;PayWise.Card&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "PayWise"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yanzhan/Desktop/PayWise/PayWise/MyCardsService.swift"
-                  timestampString = "519335757.791617"
+                  timestampString = "521529573.083101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "192">
+                  offsetFromSymbolStart = "204">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PayWise.MyCardsService.(getMyCards (completionHandler : (Swift.Array&lt;PayWise.Card&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
                   moduleName = "PayWise"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yanzhan/Desktop/PayWise/PayWise/MyCardsService.swift"
-                  timestampString = "519335757.794923"
+                  timestampString = "521529573.087747"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -390,7 +390,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayWise/MyCardsService.swift"
@@ -403,14 +403,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PayWise.MyCardsService.getMyCards (completionHandler : (Swift.Array&lt;PayWise.Card&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "PayWise"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yanzhan/Desktop/PayWise/PayWise/MyCardsService.swift"
-                  timestampString = "519335757.804027"
+                  timestampString = "521529573.09595"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -418,21 +418,53 @@
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PayWise.MyCardsService.(getMyCards (completionHandler : (Swift.Array&lt;PayWise.Card&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
                   moduleName = "PayWise"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yanzhan/Desktop/PayWise/PayWise/MyCardsService.swift"
-                  timestampString = "519335757.807319"
+                  timestampString = "521529573.099535"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "124">
+                  offsetFromSymbolStart = "148">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayWise/FirstViewController.swift"
+            timestampString = "521646394.322459"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PayWise/FirstViewController.swift"
+            timestampString = "521846148.755399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -22,11 +22,13 @@
 		938914DB1EE8BF120058D038 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938914DA1EE8BF110058D038 /* ActivityIndicator.swift */; };
 		93A4A8541EE28761009FEB42 /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8531EE28760009FEB42 /* PopoverController.swift */; };
 		93A4A8561EE28A99009FEB42 /* ResourceGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */; };
+		93B000111F1AC35800AE3246 /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B000101F1AC35800AE3246 /* TextPicker.swift */; };
 		93D798FF1EE51AA7004D89EA /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D798FE1EE51AA7004D89EA /* StoresViewController.swift */; };
 		93D799011EE59A39004D89EA /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D799001EE59A38004D89EA /* SearchCell.swift */; };
 		93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40031EE3913E001BAE5B /* RewardsCell.swift */; };
 		93FD40061EE39274001BAE5B /* RewardsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40051EE39274001BAE5B /* RewardsService.swift */; };
 		93FD40081EE39396001BAE5B /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD40071EE39396001BAE5B /* Reward.swift */; };
+		93FE7B8F1F16D7220093AAAB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE7B8E1F16D7220093AAAB /* CategoryCell.swift */; };
 		93FF3A6A1EE61606007E0BC1 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */; };
 		E0114CD62FC0159BB34C43E5 /* Pods_PayWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190690C2411AABF1C35E0D8A /* Pods_PayWise.framework */; };
 /* End PBXBuildFile section */
@@ -51,11 +53,13 @@
 		938914DA1EE8BF110058D038 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		93A4A8531EE28760009FEB42 /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		93A4A8551EE28A99009FEB42 /* ResourceGetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceGetService.swift; sourceTree = "<group>"; };
+		93B000101F1AC35800AE3246 /* TextPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPicker.swift; sourceTree = "<group>"; };
 		93D798FE1EE51AA7004D89EA /* StoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
 		93D799001EE59A38004D89EA /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		93FD40031EE3913E001BAE5B /* RewardsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsCell.swift; sourceTree = "<group>"; };
 		93FD40051EE39274001BAE5B /* RewardsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsService.swift; sourceTree = "<group>"; };
 		93FD40071EE39396001BAE5B /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
+		93FE7B8E1F16D7220093AAAB /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		F840BC32DAEE042A7FF020FB /* Pods-PayWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayWise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PayWise/Pods-PayWise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				931ADE0C1EDBCB000063D45A /* FirstViewController.swift */,
+				93FE7B8E1F16D7220093AAAB /* CategoryCell.swift */,
 				93D798FE1EE51AA7004D89EA /* StoresViewController.swift */,
 				93FF3A691EE61606007E0BC1 /* RewardsViewController.swift */,
 				93728B361EE662B500F5115E /* CategoryViewController.swift */,
@@ -127,6 +132,7 @@
 				93FD40031EE3913E001BAE5B /* RewardsCell.swift */,
 				93FD40051EE39274001BAE5B /* RewardsService.swift */,
 				93FD40071EE39396001BAE5B /* Reward.swift */,
+				93B000101F1AC35800AE3246 /* TextPicker.swift */,
 			);
 			name = Rewards;
 			sourceTree = "<group>";
@@ -277,10 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93FD40041EE3913E001BAE5B /* RewardsCell.swift in Sources */,
+				93FE7B8F1F16D7220093AAAB /* CategoryCell.swift in Sources */,
 				931ADE0F1EDBCB000063D45A /* SecondViewController.swift in Sources */,
 				93728B371EE662B500F5115E /* CategoryViewController.swift in Sources */,
 				93551EE61EDD1282007771E3 /* MyCardCell.swift in Sources */,
 				93D798FF1EE51AA7004D89EA /* StoresViewController.swift in Sources */,
+				93B000111F1AC35800AE3246 /* TextPicker.swift in Sources */,
 				93FD40081EE39396001BAE5B /* Reward.swift in Sources */,
 				931ADE251EDBE2200063D45A /* Card.swift in Sources */,
 				931ADE0B1EDBCB000063D45A /* AppDelegate.swift in Sources */,

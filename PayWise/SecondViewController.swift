@@ -147,13 +147,3 @@ extension SecondViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension String {
-    func lastIndex(of target: String) -> Int? {
-        if let range = self.range(of: target, options: .backwards) {
-            return characters.distance(from: startIndex, to: range.lowerBound)
-        } else {
-            return nil
-        }
-    }
-}
-
