@@ -51,7 +51,8 @@ extension RewardsViewController {
         cell.CardDesc.attributedText = formatBulletParagraph(bulletArray: reward.rewardDesc)
         cell.CardDesc.isScrollEnabled = false
         cell.CardDesc.isEditable = false
-        cell.rewardColor.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 1)
+//        cell.rewardColor.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 1)
+        cell.selectionStyle = .none
 
         return cell
     }

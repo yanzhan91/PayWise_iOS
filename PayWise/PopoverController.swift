@@ -19,6 +19,8 @@ class PopoverController : UITableViewController {
     
     fileprivate var activityContainer: ActivityIndicator?
     
+    fileprivate let noIntAlert = AlertFactory.getNoInternetAlert()
+    
     override func viewDidLoad() {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -33,8 +35,7 @@ class PopoverController : UITableViewController {
             if (error != nil) {
                 print(type(of: error!))
                 print(error!.localizedDescription)
-                let noIntAlert = AlertFactory.getNoInternetAlert()
-                self.present(noIntAlert, animated: true)
+                self.present(self.noIntAlert, animated: true)
             } else {
                 self.allCards = response
                 self.tableView.reloadData()
@@ -42,20 +43,21 @@ class PopoverController : UITableViewController {
             self.activityContainer?.stopActivityIndicator()
         }
     }
+    
+    deinit {
+        self.searchController.view.removeFromSuperview()
+    }
 }
 
 extension PopoverController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
-
     }
 
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        
         filteredCards = allCards.filter { card in
             return card.lowercased().contains(searchText.lowercased())
         }
-        
         tableView.reloadData()
     }
 }

@@ -18,6 +18,8 @@ class StoresViewController : UITableViewController {
     
     fileprivate var activityContainer: ActivityIndicator?
     
+    fileprivate let noIntAlert = AlertFactory.getNoInternetAlert()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityContainer = ActivityIndicator.init(parentView: self.view)
@@ -34,8 +36,7 @@ class StoresViewController : UITableViewController {
             if (error != nil) {
                 print(type(of: error!))
                 print(error!.localizedDescription)
-                let noIntAlert = AlertFactory.getNoInternetAlert()
-                self.present(noIntAlert, animated: true)
+                self.present(self.noIntAlert, animated: true)
             } else {
                 self.stores = response
                 self.tableView.reloadData()

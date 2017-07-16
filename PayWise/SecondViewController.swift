@@ -23,6 +23,8 @@ final class SecondViewController: UICollectionViewController {
     
     fileprivate var deleteMode = false
     
+    fileprivate let noIntAlert = AlertFactory.getNoInternetAlert()
+    
     var shouldRefreshCards = true
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +36,7 @@ final class SecondViewController: UICollectionViewController {
                     print(type(of: error!))
                     print(error!.localizedDescription)
                     self.shouldRefreshCards = true;
-                    let noIntAlert = AlertFactory.getNoInternetAlert()
-                    self.present(noIntAlert, animated: true)
+                    self.present(self.noIntAlert, animated: true)
                 } else {
                     self.myCards = response
                     let defaults = UserDefaults.standard
