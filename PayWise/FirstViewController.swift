@@ -125,8 +125,8 @@ extension FirstViewController : UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsPerRow = CGFloat(3)
         let paddingSpace = cellSpacing * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let availableWidth = self.view.frame.width - paddingSpace
+        let widthPerItem = floor(availableWidth / itemsPerRow)
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }

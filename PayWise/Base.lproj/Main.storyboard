@@ -431,10 +431,10 @@
                                                 <constraint firstAttribute="width" constant="159" id="xaQ-dv-5wL"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffv-M8-wsR">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ffv-M8-wsR">
                                             <rect key="frame" x="5" y="113" width="159" height="22"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -476,6 +476,8 @@
                                     <constraint firstItem="LZg-wo-dJV" firstAttribute="leading" secondItem="ktL-UP-g8M" secondAttribute="leading" id="9DE-k9-FCS"/>
                                     <constraint firstItem="ktL-UP-g8M" firstAttribute="centerX" secondItem="vLZ-j4-T2c" secondAttribute="centerX" id="FvV-ZH-saf"/>
                                     <constraint firstItem="ktL-UP-g8M" firstAttribute="top" secondItem="vLZ-j4-T2c" secondAttribute="top" constant="7" id="G00-yP-0Uw"/>
+                                    <constraint firstAttribute="trailing" secondItem="ktL-UP-g8M" secondAttribute="trailing" constant="5" id="JPl-oM-Gjh"/>
+                                    <constraint firstItem="ktL-UP-g8M" firstAttribute="leading" secondItem="vLZ-j4-T2c" secondAttribute="leading" constant="5" id="LsU-WQ-kPA"/>
                                     <constraint firstItem="LZg-wo-dJV" firstAttribute="bottom" secondItem="ktL-UP-g8M" secondAttribute="bottom" id="NoB-Mh-yjy"/>
                                     <constraint firstItem="Ffv-M8-wsR" firstAttribute="leading" secondItem="ktL-UP-g8M" secondAttribute="leading" id="Vgt-20-XD8"/>
                                     <constraint firstItem="LZg-wo-dJV" firstAttribute="height" secondItem="ktL-UP-g8M" secondAttribute="height" id="d0l-CC-UPj"/>
@@ -579,7 +581,7 @@
         <image name="Confused_gray" width="64" height="64"/>
         <image name="Happy_gray" width="64" height="64"/>
         <image name="Sad_gray" width="64" height="64"/>
-        <image name="amazon-prime-rewards" width="491" height="314"/>
+        <image name="amazon-prime-rewards" width="289" height="181"/>
         <image name="cards_tab" width="25" height="25"/>
         <image name="delete_icon" width="25" height="25"/>
         <image name="feedbacks_tab" width="25" height="25"/>

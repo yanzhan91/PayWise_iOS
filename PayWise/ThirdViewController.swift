@@ -9,7 +9,6 @@
 import UIKit
 
 class ThirdViewController : UIViewController, UITextViewDelegate {
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var headerText: UILabel!
     
     @IBOutlet weak var email: UITextField!
@@ -32,7 +31,6 @@ class ThirdViewController : UIViewController, UITextViewDelegate {
         self.confusedFace.setImage(#imageLiteral(resourceName: "Confused_gray"), for: .normal)
         self.happyFace.setImage(#imageLiteral(resourceName: "Happy_gray"), for: .normal)
         
-        self.suggestions.returnKeyType = .done
         self.suggestions.delegate = self
     }
     
@@ -82,66 +80,4 @@ class ThirdViewController : UIViewController, UITextViewDelegate {
             self.headerText.text = "We deeply appreciate your feedback."
         }
     }
-    
-//    func registerForKeyboardNotifications() {
-//        print("Register")
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//    }
-//    
-//    func deregisterFromKeyboardNotifications() {
-//        print("Deregister")
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//    }
-//    
-//    func keyboardWasShown(notification: NSNotification){
-//        //Need to calculate keyboard exact size due to Apple suggestions
-//        self.scrollView.isScrollEnabled = true
-//        var info = notification.userInfo!
-//        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-//        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
-//        
-//        self.scrollView.contentInset = contentInsets
-//        self.scrollView.scrollIndicatorInsets = contentInsets
-//        
-//        var aRect : CGRect = self.view.frame
-//        aRect.size.height -= keyboardSize!.height
-//        if let activeField = self.suggestions {
-//            if (!aRect.contains(activeField.frame.origin)) {
-//                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-//            }
-//        }
-//    }
-//    
-//    func keyboardWillBeHidden(notification: NSNotification){
-//        //Once keyboard disappears, restore original positions
-//        var info = notification.userInfo!
-//        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-//        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
-//        self.scrollView.contentInset = contentInsets
-//        self.scrollView.scrollIndicatorInsets = contentInsets
-//        self.view.endEditing(true)
-//        self.scrollView.isScrollEnabled = false
-//    }
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if (text == "\n") {
-//            textView.resignFirstResponder()
-//        }
-//        return true
-//    }
-    
-//    func hideKeyboard() {
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-//            target: self,
-//            action: #selector(dismissKeyboard))
-//        
-//        self.view.addGestureRecognizer(tap)
-//    }
-//    
-//    func dismissKeyboard() {
-//        textViewDidEndEditing(self.activeTextView!)
-//    }
-
 }

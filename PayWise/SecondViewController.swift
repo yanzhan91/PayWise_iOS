@@ -110,7 +110,6 @@ extension SecondViewController {
         cell.cardName.text = cardInfo.card_name
         
         cell.deleteButton.tag = indexPath.row
-        cell.deleteButton.backgroundColor = UIColor.white
         
         return cell
     }
