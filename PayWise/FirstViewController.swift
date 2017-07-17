@@ -21,22 +21,14 @@ class FirstViewController : UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let titleView = UIView()
-        let title = UILabel()
-        title.text = "PayWise"
-        title.textAlignment = .center
-        
-        let logo = UIImage(named: "AIRLINE")
-        let image = UIImageView(frame: CGRect(x: 0, y: 0, width:24, height:24))
-        image.image = logo
-        image.contentMode = .scaleAspectFit
-        
-        titleView.addSubview(image)
-        titleView.addSubview(title)
-        
-        self.navigationItem.titleView = titleView
-        
-        titleView.sizeToFit()
+        guard let navFrame = navigationController?.navigationBar.frame else{
+            return
+        }
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: navFrame.width, height: navFrame.height))
+        let image = UIImageView(image: #imageLiteral(resourceName: "title"))
+        image.frame = CGRect(x: navFrame.width / 2 - 65, y: navFrame.height / 2 - 15, width: 120, height: 30)
+        myView.addSubview(image)
+        self.navigationItem.titleView = myView
         
         self.collectionView?.delegate = self
         

@@ -58,7 +58,7 @@ extension PopoverController : UISearchResultsUpdating {
         filteredCards = allCards.filter { card in
             return card.lowercased().contains(searchText.lowercased())
         }
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 }
 
@@ -73,10 +73,10 @@ extension PopoverController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        if searchController.isActive && searchController.searchBar.text != "" {
-            cell.textLabel?.text = filteredCards[indexPath.row]
+        if (searchController.isActive && searchController.searchBar.text != "") {
+            cell.textLabel?.text = self.filteredCards[indexPath.row]
         } else {
-            cell.textLabel?.text = allCards[indexPath.row]
+            cell.textLabel?.text = self.allCards[indexPath.row]
         }
         return cell
     }

@@ -63,25 +63,19 @@ extension StoresViewController : UISearchResultsUpdating {
 extension StoresViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let storeCell = UITableViewCell.init(style: .default, reuseIdentifier: "StoreCell")
-        let searchCell = self.tableView.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
             
         if (searchController.isActive && searchController.searchBar.text != "") {
-            if (indexPath.row == 0) {
-                searchCell.searchTextLabel?.text = self.searchController.searchBar.text
-                return searchCell
-            } else {
-                storeCell.textLabel?.text = self.filteredStores[indexPath.row - 1]
-                return storeCell
-            }
+            storeCell.textLabel?.text = self.filteredStores[indexPath.row]
         } else {
             storeCell.textLabel?.text = self.stores[indexPath.row]
-            return storeCell
         }
+        
+        return storeCell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (searchController.isActive && searchController.searchBar.text != "") {
-            return filteredStores.count + 1
+            return filteredStores.count
         } else {
             return self.stores.count
         }
