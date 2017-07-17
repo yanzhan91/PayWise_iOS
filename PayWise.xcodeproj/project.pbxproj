@@ -437,6 +437,7 @@
 			baseConfigurationReference = F840BC32DAEE042A7FF020FB /* Pods-PayWise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = MH65659B7Z;
 				INFOPLIST_FILE = PayWise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -452,6 +453,7 @@
 			baseConfigurationReference = 451E57461B1FC9B8E4B993F7 /* Pods-PayWise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = MH65659B7Z;
 				INFOPLIST_FILE = PayWise/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
