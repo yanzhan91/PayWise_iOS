@@ -8,8 +8,11 @@
 
 import UIKit
 import Alamofire
+import GooglePlacePicker
 
 class FirstViewController : UICollectionViewController {
+    
+    fileprivate var placePicker: GMSPlacePickerViewController!
     
     fileprivate let resourceGetService = ResourceGetService()
     fileprivate var categories = [String]()
@@ -21,13 +24,20 @@ class FirstViewController : UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let config = GMSPlacePickerConfig(viewport: nil)
+        placePicker = GMSPlacePickerViewController(config: config)
+        placePicker.delegate = self
+        placePicker.modalPresentationStyle = .popover
+        
         guard let navFrame = navigationController?.navigationBar.frame else{
             return
         }
         let myView = UIView(frame: CGRect(x: 0, y: 0, width: navFrame.width, height: navFrame.height))
         let image = UIImageView(image: #imageLiteral(resourceName: "title"))
-        image.frame = CGRect(x: navFrame.width / 2 - 65, y: navFrame.height / 2 - 15, width: 120, height: 30)
+        image.frame = CGRect(x: 0, y: 0, width: 120, height: 30)
+        image.center = myView.center
         myView.addSubview(image)
+        myView.backgroundColor = .red
         self.navigationItem.titleView = myView
         
         self.collectionView?.delegate = self
@@ -53,12 +63,9 @@ class FirstViewController : UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         checkForAddedCards()
     }
-    
-    func setButtonBorder(button: UIButton) {
-        button.backgroundColor = .clear
-        button.layer.borderColor = button.currentTitleColor.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 5
+        
+    @IBAction func showPlaces(_ sender: Any) {
+        self.present(placePicker, animated: true, completion: nil)
     }
     
     func checkForAddedCards() {
@@ -131,5 +138,24 @@ extension FirstViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension FirstViewController : GMSPlacePickerViewControllerDelegate {
+    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+        print(place)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
+//        rewardsVC.placeName = place.name
+//        viewController.dismiss(animated: true)
+//        self.navigationController?.pushViewController(rewardsVC, animated: true)
+    }
+    
+    func placePicker(_ viewController: GMSPlacePickerViewController, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
+        viewController.dismiss(animated: true, completion: nil)
     }
 }
