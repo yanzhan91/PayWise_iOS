@@ -43,7 +43,6 @@ class FirstViewController : UICollectionViewController {
                 self.present(noIntAlert, animated: true)
             } else {
                 self.categories = response
-                self.categories.append("MERCHANT")
                 self.collectionView?.reloadData()
             }
             self.activityContainer?.stopActivityIndicator()
@@ -89,25 +88,16 @@ extension FirstViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categorycell2", for: indexPath) as! CategoryCell
         let category = self.categories[indexPath.row]
-        if (indexPath.row == self.categories.count - 1) {
-            cell.title?.text = "Merchant (BETA)"
-        } else {
-            cell.title?.text = category
-        }
+        cell.title?.text = category
         cell.image.image = UIImage(named: category)
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if (indexPath.row == self.categories.count - 1) {
-            let vc = storyboard.instantiateViewController(withIdentifier: "MerchantVC") as! StoresViewController
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
-            rewardsVC.categoryName = self.categories[indexPath.row]
-            self.navigationController?.pushViewController(rewardsVC, animated: true)
-        }
+        let rewardsVC = storyboard.instantiateViewController(withIdentifier: "RewardsVC") as! RewardsViewController
+        rewardsVC.categoryName = self.categories[indexPath.row]
+        self.navigationController?.pushViewController(rewardsVC, animated: true)
     }
 }
 

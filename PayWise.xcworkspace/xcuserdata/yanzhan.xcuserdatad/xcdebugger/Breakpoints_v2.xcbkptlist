@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayWise/FirstViewController.swift"
-            timestampString = "521954394.956604"
+            timestampString = "522433007.010109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,13 +458,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PayWise/FirstViewController.swift"
-            timestampString = "521954394.956604"
+            timestampString = "522433007.010109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
-            landmarkType = "7">
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "FirstViewController"
+            landmarkType = "4">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
