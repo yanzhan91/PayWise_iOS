@@ -43,7 +43,7 @@ class ThirdViewController : UIViewController, UITextViewDelegate {
     }
     
     @IBAction func sadFacePressed(_ sender: Any) {
-        self.headerText.text = "We're suppose you don't like our app. Please help us with suggestions below."
+        self.headerText.text = "We're sorry you don't like our app. Please help us with suggestions below."
         self.sadFace.setImage(#imageLiteral(resourceName: "Sad"), for: .normal)
         self.confusedFace.setImage(#imageLiteral(resourceName: "Confused_gray"), for: .normal)
         self.happyFace.setImage(#imageLiteral(resourceName: "Happy_gray"), for: .normal)
