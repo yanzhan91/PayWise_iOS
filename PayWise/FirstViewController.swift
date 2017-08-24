@@ -21,15 +21,6 @@ class FirstViewController : UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let navFrame = navigationController?.navigationBar.frame else{
-            return
-        }
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: navFrame.width, height: navFrame.height))
-        let image = UIImageView(image: #imageLiteral(resourceName: "title"))
-        image.frame = CGRect(x: navFrame.width / 2 - 65, y: navFrame.height / 2 - 15, width: 120, height: 30)
-        myView.addSubview(image)
-        self.navigationItem.titleView = myView
-        
         self.collectionView?.delegate = self
         
         self.activityContainer = ActivityIndicator.init(parentView: self.view)

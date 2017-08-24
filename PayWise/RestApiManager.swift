@@ -15,7 +15,7 @@ class RestApiManager: NSObject {
     
     func getResponse(urlPath: String, method: String, parameters: Dictionary<String, String>?, completionHandler: @escaping (JSON?, Error?) -> Void) {
         Alamofire.request(
-                URL(string: "https://m8n05huk4i.execute-api.us-east-1.amazonaws.com/dev" + urlPath)!,
+                URL(string: "https://m8n05huk4i.execute-api.us-east-1.amazonaws.com/prod" + urlPath)!,
                 method: HTTPMethod.init(rawValue: method)!,
                 parameters: parameters,
                 encoding: JSONEncoding.default)
