@@ -82,6 +82,7 @@ final class SecondViewController: UICollectionViewController {
         }
         myCards.remove(at: button.tag)
         self.collectionView?.deleteItems(at: [IndexPath.init(row: button.tag, section: 0)])
+        removeCard(NSNull())
     }
 }
 
@@ -115,14 +116,13 @@ extension SecondViewController {
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Heree")
-        if (!deleteMode) {
-            if let url = NSURL(string: myCards[indexPath.row].card_url) {
-                UIApplication.shared.open(url as URL)
-            }
-        }
-    }
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if (!deleteMode) {
+//            if let url = NSURL(string: myCards[indexPath.row].card_url) {
+//                UIApplication.shared.open(url as URL)
+//            }
+//        }
+//    }
 }
 
 extension SecondViewController : UICollectionViewDelegateFlowLayout {

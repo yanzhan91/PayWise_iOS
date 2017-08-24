@@ -16,7 +16,7 @@
         <scene sceneID="5tw-Sl-4VX">
             <objects>
                 <collectionViewController id="FOJ-id-P8g" customClass="FirstViewController" customModule="PayWise" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="rpN-kt-5Zz">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rpN-kt-5Zz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,7 +71,6 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="PayWise" id="6Dk-co-oab">
                         <barButtonItem key="rightBarButtonItem" image="information" id="2vw-Xp-cgP">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="m4s-d8-XLT" kind="show" id="uSq-BY-K9r"/>
                             </connections>
@@ -134,6 +133,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ZBb-8q-wVv" detailTextLabel="HBK-uZ-Oz1" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="e2A-ro-vkP">
@@ -159,6 +159,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vc3-X6-mk2" detailTextLabel="iCl-7l-eF1" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="p86-QS-Qxz">
@@ -184,6 +185,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="in9-UV-eAq" detailTextLabel="S2i-bC-StD" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="vaa-gN-rjC">
@@ -209,6 +211,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="9hS-52-dpD" detailTextLabel="6Su-RT-8qF" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="rJj-Ai-Rj6">
@@ -234,6 +237,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="W15-iI-YF6" detailTextLabel="Qs4-wS-etK" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="grM-Kn-PXh">
@@ -259,6 +263,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="1hO-Lm-j5b" detailTextLabel="Ozj-wk-Qr4" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="ykz-tg-Obb">
@@ -284,6 +289,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wBr-X8-xvR" detailTextLabel="DCb-ma-JBo" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="KUT-fe-ox5">
@@ -309,6 +315,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="2ty-A6-iU8" detailTextLabel="7um-2O-VLL" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="e9a-Oe-LCq">
@@ -334,6 +341,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Fon-c6-Gm7" detailTextLabel="oRv-O4-cMu" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="WwS-tc-Ofo">
@@ -359,6 +367,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </cells>
@@ -387,7 +396,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6MQ-ZK-D0L" id="y1D-5M-lC5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="142.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0F-kx-mhh">

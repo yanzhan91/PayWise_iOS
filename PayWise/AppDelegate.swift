@@ -17,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.sharedManager().enable = true
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 187.0/255.0, green: 225.0/255.0, blue: 191.0/255.0, alpha: 1.0)
+        
+        let textAttributes = [
+            NSForegroundColorAttributeName : UIColor(red: 187.0/255.0, green: 225.0/255.0, blue: 191.0/255.0, alpha: 1.0),
+            NSFontAttributeName: UIFont.boldSystemFont(ofSize: 20.0)
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = textAttributes
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 187.0/255.0, green: 225.0/255.0, blue: 191.0/255.0, alpha: 1.0)
+
         return true
     }
 
